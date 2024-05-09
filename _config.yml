@@ -1,4 +1,3 @@
 url: https://najls.github.io
 baseurl: /raal-se
 languages: [en, sv]
-permalink: /:categories/:year/:month/:day/:title/
