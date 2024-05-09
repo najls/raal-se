@@ -1,0 +1,20 @@
+languages:
+
+- language: "sv"
+  links:
+
+  - title: "Hem"
+    url: /
+
+  - title: "Musik"
+    url: /musik/
+
+- language: "en"
+  links:
+
+  - title: "Home"
+    url: /en/
+
+  - title: "Music"
+    url: /music/
+

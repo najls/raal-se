@@ -1,16 +1,14 @@
 <nav>
     <ul>
-        <li>
-            <a href="#">
-                <span lang="sv">Länk</span>
-                <span lang="en">Link</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <span lang="sv">Länk</span>
-                <span lang="en">Link</span>
-            </a>
-        </li>
+        {% for item in site.data.navigation.languages %}
+            {% if item.language == page.lang %}
+                {% for link in item.links %}
+                    {% assign url = link.url | relative_url %}
+                    <li>
+                        <a href="{{ url }}">{{ link.title }}</a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
     </ul>
 </nav>
