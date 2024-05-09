@@ -1,21 +1,18 @@
+{% if page.lang == "sv" %}
+    {% assign skip_link_text = "Hoppa till huvudinnehåll" %}
+    {% assign lang_link_text = "English" %}
+    {% assign lang_link_lang = "en" %}
+{% else %}
+    {% assign skip_link_text = "Skip to main content" %}
+    {% assign lang_link_text = "Svenska" %}
+    {% assign lang_link_lang = "sv" %}
+{% endif %}
 <!DOCTYPE html>
-<html lang="sv-SE-u-sd-seac">
+<html lang="{{ page.lang }}">
 {% include head.html %}
 <body>
-    <a href="#main" class="skip-to-main">
-        <span lang="sv">Hoppa till huvudinnehåll</span>
-        <span lang="en">Skip to main content</span>
-    </a>
-    <form>
-        <label for="langSelect">
-            <span lang="sv">Språk</span>
-            <span lang="en">Language</span>
-        </label>
-        <select id="langSelect">
-            <option value="sv" selected>Svenska</option>
-            <option value="en">English</option>
-        </select>
-    </form>
+    <a href="#main" id="skipToMain">{{ skip_link_text }}</a>
+    <a href="{{ page.translate }}" lang="{{ lang_link_lang }}">{{ lang_link_text }}</a>
     <header>
         {% include nav.html %}
         <h1>{{ page.title }}</h1>
