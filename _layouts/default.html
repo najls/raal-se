@@ -24,28 +24,5 @@
         {{ content }}
     </main>
     {% include footer.html %}
-    <script>
-        const en = document.querySelectorAll('span[lang="en"]'),
-              sv = document.querySelectorAll('span[lang="sv"]');
-        displayNone(en);
-        document.getElementById('langSelect').addEventListener('change', (event) => {
-            switch (event.target.value) {
-                case 'en':
-                    displayNone(sv);
-                    displayInline(en);
-                    break;
-                case 'sv':
-                    displayNone(en);
-                    displayInline(sv);
-                    break;
-            }
-        })
-        function displayNone(elements) {
-            Array.from(elements).forEach(element => element.style.display = 'none');
-        }
-        function displayInline(elements) {
-            Array.from(elements).forEach(element => element.style.display = 'inline');
-        }
-    </script>
 </body>
 </html>
