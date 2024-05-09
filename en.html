@@ -1,8 +1,10 @@
 ---
 layout: default
+lang: en
 ---
 <ul>
-    {% for post in site.posts %}
+    {% assign posts=site.posts | where: "lang", page.lang %}
+    {% for post in posts %}
         <li>
             <article>
                 <header>

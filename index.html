@@ -1,8 +1,10 @@
 ---
 layout: default
+lang: sv
 ---
 <ul>
-    {% for post in site.posts %}
+    {% assign posts=site.posts | where: "lang", page.lang %}
+    {% for post in posts %}
         <li>
             <article>
                 <header>
@@ -13,21 +15,4 @@ layout: default
             </article>
         </li>
     {% endfor %}
-</ul>
-<ul>
-    <li>
-        <article>
-            <header>
-                <h2>Drekajus</h2>
-                <p>
-                    <span lang="sv">1 april 2024</span>
-                    <span lang="en">1 April 2024</span>
-                </p>
-            </header>
-            <p>
-                <span lang="sv">Här är text på svenska</span>
-                <span lang="en">This is in English</span>
-            </p>
-        </article>
-    </li>
 </ul>
