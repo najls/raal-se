@@ -1,71 +1,26 @@
 <!DOCTYPE html>
 <html lang="sv-SE-u-sd-seac">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Raal</title>
-
-    <!-- <link rel="icon" href="favicon.svg">
-    <link rel="stylesheet" href="style.css"> -->
-</head>
+{% include head.html %}
 <body>
-    <header>
-        <a href="#main" class="skip-to-main">
-            <span lang="sv">Hoppa till huvudinnehåll</span>
-            <span lang="en">Skip to main content</span>
-        </a>
-        <form>
-            <label for="langSelect">
-                <span lang="sv">Språk</span>
-                <span lang="en">Language</span>
-            </label>
-            <select id="langSelect">
-                <option value="sv" selected>Svenska</option>
-                <option value="en">English</option>
-            </select>
-        </form>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#">
-                        <span lang="sv">Länk</span>
-                        <span lang="en">Link</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span lang="sv">Länk</span>
-                        <span lang="en">Link</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <h1>Raal</h1>
-    </header>
+    <a href="#main" class="skip-to-main">
+        <span lang="sv">Hoppa till huvudinnehåll</span>
+        <span lang="en">Skip to main content</span>
+    </a>
+    <form>
+        <label for="langSelect">
+            <span lang="sv">Språk</span>
+            <span lang="en">Language</span>
+        </label>
+        <select id="langSelect">
+            <option value="sv" selected>Svenska</option>
+            <option value="en">English</option>
+        </select>
+    </form>
+    {% include header.html %}
     <main id="main">
         {{ content }}
     </main>
-    <footer>
-        <h2>
-            <span lang="sv">Externt</span>
-            <span lang="en">External</span>
-        </h2>
-        <ul>
-            <li>
-                <a href="#">
-                    <span lang="sv">Länk</span>
-                    <span lang="en">Link</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span lang="sv">Länk</span>
-                    <span lang="en">Link</span>
-                </a>
-            </li>
-        </ul>
-    </footer>
+    {% include footer.html %}
     <script>
         const en = document.querySelectorAll('span[lang="en"]'),
               sv = document.querySelectorAll('span[lang="sv"]');
