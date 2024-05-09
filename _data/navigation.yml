@@ -1,20 +1,20 @@
 languages:
 
-- language: "sv"
+- language: sv
   links:
 
-  - title: "Hem"
+  - title: Hem
     url: /
 
-  - title: "Musik"
+  - title: Musik
     url: /musik/
 
-- language: "en"
+- language: en
   links:
 
-  - title: "Home"
+  - title: Home
     url: /en/
 
-  - title: "Music"
+  - title: Music
     url: /music/
 
