@@ -1,4 +1,4 @@
 url: https://najls.github.io
 baseurl: /raal-se
 languages: [en, sv]
-permalink: /:name
+permalink: /:name/
