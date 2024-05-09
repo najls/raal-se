@@ -1,5 +1,4 @@
-url: "https://najls.github.io"
-baseurl: "/raal-se"
+url: "https://najls.github.io/raal-se"
 lang: sv
 languages: ["en", "sv"]
 permalink: /:categories/:year/:month/:day/:title/
