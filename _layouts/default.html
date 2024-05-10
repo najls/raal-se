@@ -12,11 +12,14 @@
 {% include head.html %}
 <body>
     <a href="#main" id="skipToMain">{{ skip_link_text }}</a>
-    <a href="{{ page.translate | relative_url }}" lang="{{ lang_link_lang }}">{{ lang_link_text }}</a>
-    <header>
-        {% include nav.html %}
+    <a href="{{ page.translate | relative_url }}" id="changeLang" lang="{{ lang_link_lang }}">
+        <div class="earth-europe" aria-hidden="true"></div>
+        <span>{{ lang_link_text }}</span>
+    </a>
+    <header id="bodyHeader">
         <h1 lang="sv-SE-u-sd-seac">Raal</h1>
     </header>
+    {% include nav.html %}
     <main id="main">
         {{ content }}
     </main>

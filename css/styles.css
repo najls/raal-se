@@ -1,24 +1,22 @@
----
----
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: normal;
-    src: url("{{ '/assets/fonts/OpenSans-Light.ttf' | relative_url }}") format('truetype');
+    src: url(../assets/fonts/OpenSans-Light.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: bold;
-    src: url("{{ '/assets/fonts/OpenSans-SemiBold.ttf' | relative_url }}") format('truetype');
+    src: url(../assets/fonts/OpenSans-SemiBold.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'Open Sans';
     font-style: italic;
     font-weight: normal;
-    src: url("{{ '/assets/fonts/OpenSans-LightItalic.ttf' | relative_url }}") format('truetype');
+    src: url(../assets/fonts/OpenSans-LightItalic.ttf) format('truetype');
 }
 
 :root {
@@ -72,8 +70,8 @@ h2 {
 #changeLang .earth-europe {
     background-color: var(--prim-color);
     height: 1.5em;
-    -webkit-mask: url("{{ '/assets/icons/earth-europe.svg' | relative_url }}") no-repeat center;
-    mask: url("{{ '/assets/icons/earth-europe.svg' | relative_url }}") no-repeat center;
+    -webkit-mask: url(../assets/icons/earth-europe.svg) no-repeat center;
+    mask: url(../assets/icons/earth-europe.svg) no-repeat center;
 }
 #changeLang span {
     font-size: .75em;
