@@ -129,7 +129,7 @@ h2 {
     margin: 0 0 1em;
     padding: 0;
 }
-#mainNav li { padding: .75em 1em clamp(1em, 1em + 1.6667vw, 3em) }
+#mainNav li { padding: .75em 1em clamp(1em, calc(1em + 1.6667vw), 3em) }
 #mainNav li:first-child {
     border-right: .063em solid rgb(var(--prim-color));
     text-align: right;
