@@ -21,15 +21,22 @@
     src: url("{{ '/assets/fonts/OpenSans-LightItalic.ttf' | relative_url }}") format('truetype');
 }
 
+@font-face {
+    font-family: 'Alumni Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: url("{{ '/assets/fonts/AlumniSans-Regular.ttf' | relative_url }}") format('truetype');
+}
+
 :root {
     --bg-color: 19, 4, 17;
-    --text-color: #efeffe;
-    --prim-color: #e13947;
+    --text-color: 239, 239, 254;
+    --prim-color: 225, 57, 71;
 }
 
 body {
     background-color: rgb(var(--bg-color));
-    color: var(--text-color);
+    color: rgb(var(--text-color));
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: clamp(0.875rem, calc(0.4286rem + 1.9048vw), 1rem);
     margin: 0;
@@ -44,21 +51,21 @@ h2 {
 #skipToMain {
     background-color: rgba(var(--bg-color),.75);
     display: block;
-    color: var(--text-color);
+    color: rgb(var(--text-color));
     font-weight: bold;
     margin-top: -10em;
     padding: 1em 0;
     position: absolute;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 3;
     text-align: center;
     text-decoration: none;
 }
 #skipToMain:focus { margin-top: 0 }
 
 #changeLang {
-    color: var(--prim-color);
+    color: rgb(var(--text-color));
     display: flex;
     flex-direction: column;
     gap: .125em;
@@ -66,11 +73,12 @@ h2 {
     padding: .5em;
     position: absolute;
     right: 0;
+    z-index: 2;
     text-decoration: none;
 }
 #changeLang:focus, #changeLang:hover { opacity: 100% }
 #changeLang .earth-europe {
-    background-color: var(--prim-color);
+    background-color: rgb(var(--text-color));
     height: 1.5em;
     -webkit-mask: url("{{ '/assets/icons/earth-europe.svg' | relative_url }}") no-repeat center;
     mask: url("{{ '/assets/icons/earth-europe.svg' | relative_url }}") no-repeat center;
@@ -82,16 +90,18 @@ h2 {
 }
 
 #bodyHeader {
-    background: var(--prim-color);
-    background: radial-gradient(ellipse at 50% 150%, var(--prim-color) 10%, rgba(var(--bg-color),.5) 80%),
+    background: rgb(var(--prim-color));
+    background: radial-gradient(ellipse at 50% 150%, rgb(var(--prim-color)) 10%, rgba(var(--bg-color),.5) 80%),
         url("{{ '/assets/filters/noise.svg' | relative_url }}");
-    filter: brightness(.75) contrast(1.25);
+    filter: brightness(.875) contrast(1.5);
     display: flex;
     flex-wrap: wrap;
     align-content: end;
     justify-content: center;
     font-size: clamp(3rem, calc(1.301rem + 7.2492vw), 10rem);
     height: 2em;
+    position: relative;
+    z-index: 1;
 }
 #bodyHeader h1 {
     color: rgb(var(--bg-color));
@@ -101,6 +111,39 @@ h2 {
     letter-spacing: clamp(0em, 8.5333vw, 2em);
     line-height: .75;
     margin: 0;
-    text-indent: clamp(0em, 8.5333vw, 2em);
+    text-indent: clamp(0em, 6.9333vw, 1.625em);
     text-transform: uppercase;
 }
+
+#mainNav {
+    background-color: rgb(var(--bg-color));
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+#mainNav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    margin: 0 0 1em;
+    padding: 0;
+}
+#mainNav li { padding: .75em 1em clamp(1em, 1em + 1.6667vw, 3em) }
+#mainNav li:first-child {
+    border-right: .063em solid rgb(var(--prim-color));
+    text-align: right;
+}
+#mainNav li:last-child {
+    border-left: .063em solid rgb(var(--prim-color));
+}
+#mainNav a {
+    color: rgb(var(--prim-color),.5);
+    font-size: 1.25em;
+    font-family: 'Alumni Sans', Arial, sans-serif;
+    letter-spacing: .25em;
+    margin-right: -.25em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#mainNav a:focus, #mainNav a:hover { color: rgb(var(--prim-color),1) }
