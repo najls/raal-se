@@ -4,11 +4,11 @@ layout: default
 title: Raal
 translate: /
 ---
-<ul>
-    {% assign posts=site.posts | where: "lang", page.lang %}
+<ul class="collection">
+    {% assign posts = site.posts | where: "lang", page.lang %}
     {% for post in posts %}
         <li>
-            <article>
+            <article class="news">
                 <header>
                     <h2>{{ post.title }}</h2>
                     <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date_to_long_string }}</time>

@@ -32,6 +32,7 @@
     --bg-color: 19, 4, 17;
     --text-color: 239, 239, 254;
     --prim-color: 225, 57, 71;
+    --sec-color: 60, 130, 140;
 }
 
 body {
@@ -48,13 +49,14 @@ body {
 main { flex: 1 }
 
 h2 {
+    color: rgb(var(--sec-color));
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 1.125em;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 #skipToMain {
-    background-color: rgba(var(--bg-color),.75);
+    background-color: rgba(var(--bg-color), .75);
     display: block;
     color: rgb(var(--text-color));
     font-weight: bold;
@@ -96,7 +98,7 @@ h2 {
 
 #bodyHeader {
     background: rgb(var(--prim-color));
-    background: radial-gradient(ellipse at 50% 150%, rgb(var(--prim-color)) 10%, rgba(var(--bg-color),.5) 80%),
+    background: radial-gradient(ellipse at 50% 150%, rgb(var(--prim-color)) 15%, rgba(var(--bg-color), .5) 75%),
         url("{{ '/assets/filters/noise.svg' | relative_url }}") 200px / 200px fixed;
     filter: brightness(.875) contrast(1.5);
     display: flex;
@@ -122,6 +124,8 @@ h2 {
 
 #mainNav {
     background-color: rgb(var(--bg-color));
+    background: radial-gradient(ellipse at 50% -125%, rgba(var(--prim-color), .75) 15%, rgb(var(--bg-color)) 50%),
+        url("{{ '/assets/filters/noise.svg' | relative_url }}") 200px / 200px fixed;
     display: flex;
     justify-content: center;
     position: relative;
@@ -130,9 +134,6 @@ h2 {
 #mainNav ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    list-style: none;
-    margin: 0 0 1em;
-    padding: 0;
 }
 #mainNav li { padding: .75em 1em clamp(1em, calc(1em + 1.6667vw), 3em) }
 #mainNav li:first-child {
@@ -141,7 +142,7 @@ h2 {
 }
 #mainNav li:last-child { border-left: .063em solid rgb(var(--prim-color)) }
 #mainNav a {
-    color: rgb(var(--prim-color),.5);
+    color: rgba(var(--prim-color), .625);
     font-size: 1.375em;
     font-family: 'Alumni Sans', Arial, sans-serif;
     letter-spacing: .25em;
@@ -149,8 +150,25 @@ h2 {
     text-decoration: none;
     text-transform: uppercase;
 }
-#mainNav a:focus, #mainNav a:hover { color: rgb(var(--prim-color),1) }
+#mainNav a:focus, #mainNav a:hover { color: rgba(var(--prim-color), 1) }
 
 #bodyFooter {
-    background: rgb(var(--prim-color));
+}
+
+.narrow {
+    margin: 0 auto;
+    padding: 0 1em 2em;
+    width: clamp(375px, 50vw, 960px);
+}
+
+ul.collection {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+article.news { margin-bottom: 3em }
+article.news time {
+    color: rgba(var(--text-color), .625);
+    font-size: .875em;
 }
