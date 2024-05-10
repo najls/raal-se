@@ -83,9 +83,9 @@ h2 {
 
 #bodyHeader {
     background: var(--prim-color);
-    background: radial-gradient(ellipse at 50% 150%, var(--prim-color) 10%, rgb(var(--bg-color)) 80%),
+    background: radial-gradient(ellipse at 50% 150%, var(--prim-color) 10%, rgba(var(--bg-color),.5) 80%),
         url("{{ '/assets/filters/noise.svg' | relative_url }}");
-    filter: contrast(125%) brightness(1000%);
+    filter: brightness(.75) contrast(1.25);
     display: flex;
     flex-wrap: wrap;
     align-content: end;
@@ -95,6 +95,7 @@ h2 {
 }
 #bodyHeader h1 {
     color: rgb(var(--bg-color));
+    mix-blend-mode: overlay;
     font-family: Tahoma, Verdana, sans-serif;
     font-size: 1em;
     letter-spacing: clamp(0em, 8.5333vw, 2em);
