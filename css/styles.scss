@@ -83,7 +83,9 @@ h2 {
 
 #bodyHeader {
     background: var(--prim-color);
-    background: radial-gradient(ellipse at 50% 90%, var(--prim-color) 10%, rgb(var(--bg-color)) 80%);
+    background: radial-gradient(ellipse at 50% 150%, var(--prim-color) 10%, rgb(var(--bg-color)) 80%),
+        url("{{ '/assets/filters/noise.svg' | relative_url }}");
+    filter: contrast(125%) brightness(1000%);
     display: flex;
     flex-wrap: wrap;
     align-content: end;
