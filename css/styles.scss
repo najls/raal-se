@@ -34,6 +34,8 @@
     --prim-color: 230, 50, 70;
 }
 
+* { box-sizing: border-box }
+
 body {
     background-color: rgb(var(--bg-color));
     color: rgba(var(--text-color), .625);
@@ -95,7 +97,7 @@ h2 {
     text-transform: uppercase;
 }
 
-#bodyHeader {
+#mainHeader {
     background: rgb(var(--prim-color));
     background: radial-gradient(ellipse at 50% 150%, rgb(var(--prim-color)) 15%, rgba(var(--bg-color), .5) 75%),
         url("{{ '/assets/filters/noise.svg' | relative_url }}") 200px / 200px fixed;
@@ -109,7 +111,7 @@ h2 {
     position: relative;
     z-index: 1;
 }
-#bodyHeader h1 {
+#mainHeader h1 {
     color: rgb(var(--bg-color));
     mix-blend-mode: overlay;
     font-family: Tahoma, Verdana, sans-serif;
@@ -151,13 +153,13 @@ h2 {
 }
 #mainNav a:focus, #mainNav a:hover { color: rgba(var(--prim-color), 1) }
 
-#bodyFooter {
+#mainFooter {
 }
 
 .narrow {
     margin: 0 auto;
     padding: 0 1em 2em;
-    width: clamp(375px, 50vw, 960px);
+    width: 100%;
 }
 
 ul.collection {
@@ -167,7 +169,22 @@ ul.collection {
 }
 
 article.news { margin-bottom: 3em }
+article.news .image {
+    float: left;
+    width: 30vw;
+    max-width: 200px;
+    margin: .5em 1em 0 0;
+}
+article.news .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 article.news time {
     color: rgba(var(--text-color), .375);
     font-size: .875em;
+}
+
+@media(min-width: 375px) {
+    .narrow { width: clamp(375px, 50vw, 960px) }
 }
