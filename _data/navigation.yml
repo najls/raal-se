@@ -9,6 +9,9 @@ languages:
   - title: Musik
     url: /musik/
 
+  - title: Om
+    url: /om/
+
 - language: en
   links:
 
@@ -17,3 +20,6 @@ languages:
 
   - title: Music
     url: /music/
+
+  - title: About
+    url: /about/
