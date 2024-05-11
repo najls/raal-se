@@ -135,13 +135,31 @@ h2 {
 #mainNav ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
 }
-#mainNav li { padding: .75em 1em clamp(1em, calc(1em + 1.6667vw), 3em) }
+#mainNav li { padding: .75em 1em 1em }
 #mainNav li:first-child {
     border-right: .063em solid rgb(var(--prim-color));
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
     text-align: right;
 }
-#mainNav li:last-child { border-left: .063em solid rgb(var(--prim-color)) }
+#mainNav li:not(:first-child) { border-left: .063em solid rgb(var(--prim-color)) }
+#mainNav li:nth-child(2) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+#mainNav li:nth-child(3) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+#mainNav li:last-child { padding: 0 1em clamp(1em, calc(1em + 1.6667vw), 3em) }
 #mainNav a {
     color: rgba(var(--prim-color), .625);
     font-size: 1.375em;
