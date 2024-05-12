@@ -28,6 +28,27 @@
     src: url("{{ '/assets/fonts/AlumniSans-Regular.ttf' | relative_url }}") format('truetype');
 }
 
+#apple {
+    -webkit-mask: url("{{ '/assets/icons/spotify.svg' | relative_url }}") no-repeat center;
+            mask: url("{{ '/assets/icons/spotify.svg' | relative_url }}") no-repeat center;
+}
+#earthEurope {
+    -webkit-mask: url("{{ '/assets/icons/earth-europe.svg' | relative_url }}") no-repeat center;
+            mask: url("{{ '/assets/icons/earth-europe.svg' | relative_url }}") no-repeat center;
+}
+#facebook {
+    -webkit-mask: url("{{ '/assets/icons/facebook.svg' | relative_url }}") no-repeat center;
+            mask: url("{{ '/assets/icons/facebook.svg' | relative_url }}") no-repeat center;
+}
+#spotify {
+    -webkit-mask: url("{{ '/assets/icons/spotify.svg' | relative_url }}") no-repeat center;
+            mask: url("{{ '/assets/icons/spotify.svg' | relative_url }}") no-repeat center;
+}
+.icon {
+    background-color: rgb(var(--text-color));
+    height: 1.5em;
+}
+
 :root {
     --bg-color: 19, 4, 17;
     --text-color: 240, 240, 250;
@@ -56,6 +77,9 @@ h2 {
     font-weight: normal;
 }
 
+a { color: rgba(var(--prim-color), .625) }
+a:focus, a:hover { color: rgba(var(--prim-color), 1) }
+
 #skipToMain {
     background-color: rgba(var(--bg-color), .75);
     display: block;
@@ -77,20 +101,15 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: .125em;
-    opacity: 50%;
+    opacity: 33%;
     padding: .5em;
     position: absolute;
     right: 0;
     z-index: 2;
     text-decoration: none;
 }
-#changeLang:focus, #changeLang:hover { opacity: 100% }
-#changeLang .earth-europe {
-    background-color: rgb(var(--text-color));
-    height: 1.5em;
-    -webkit-mask: url("{{ '/assets/icons/earth-europe.svg' | relative_url }}") no-repeat center;
-    mask: url("{{ '/assets/icons/earth-europe.svg' | relative_url }}") no-repeat center;
-}
+#changeLang:focus,
+#changeLang:hover { opacity: 100% }
 #changeLang span {
     font-size: .75em;
     font-weight: bold;
@@ -161,17 +180,12 @@ h2 {
 }
 #mainNav li:last-child { padding: 0 1em clamp(1em, calc(1em + 1.6667vw), 3em) }
 #mainNav a {
-    color: rgba(var(--prim-color), .625);
     font-size: 1.375em;
     font-family: 'Alumni Sans', Arial, sans-serif;
     letter-spacing: .25em;
     margin-right: -.25em;
     text-decoration: none;
     text-transform: uppercase;
-}
-#mainNav a:focus, #mainNav a:hover { color: rgba(var(--prim-color), 1) }
-
-#mainFooter {
 }
 
 .narrow {
@@ -203,6 +217,49 @@ article.news time {
     font-size: .875em;
 }
 
+#mainFooter ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+#mainFooter li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#mainFooter .icon {
+    background-color: rgba(var(--prim-color), .625);
+    width: 1.5em
+}
+#mainFooter a:hover .icon { background-color: rgb(var(--prim-color)) }
+
 @media(min-width: 375px) {
     .narrow { width: clamp(375px, 50vw, 960px) }
+}
+
+/* https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */
+.sr-only {
+    border: 0                                                       !important;
+    clip: rect(1px, 1px, 1px, 1px)                                  !important;
+    -webkit-clip-path: inset(50%)                                   !important;
+            clip-path: inset(50%)                                   !important;
+    height: 1px                                                     !important;
+    margin: -1px                                                    !important;
+    overflow: hidden                                                !important;
+    padding: 0                                                      !important;
+    position: absolute                                              !important;
+    width: 1px                                                      !important;
+    white-space: nowrap                                             !important;
+}
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+    clip: auto                                                      !important;
+    -webkit-clip-path: none                                         !important;
+            clip-path: none                                         !important;
+    height: auto                                                    !important;
+    margin: auto                                                    !important;
+    overflow: visible                                               !important;
+    width: auto                                                     !important;
+    white-space: normal                                             !important;
 }
