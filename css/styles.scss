@@ -29,8 +29,8 @@
 }
 
 #apple {
-    -webkit-mask: url("{{ '/assets/icons/spotify.svg' | relative_url }}") no-repeat center;
-            mask: url("{{ '/assets/icons/spotify.svg' | relative_url }}") no-repeat center;
+    -webkit-mask: url("{{ '/assets/icons/apple.svg' | relative_url }}") no-repeat center;
+            mask: url("{{ '/assets/icons/apple.svg' | relative_url }}") no-repeat center;
 }
 #earthEurope {
     -webkit-mask: url("{{ '/assets/icons/earth-europe.svg' | relative_url }}") no-repeat center;
