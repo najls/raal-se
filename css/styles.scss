@@ -148,6 +148,7 @@ a:focus, a:hover { color: rgba(var(--prim-color), 1) }
         url("{{ '/assets/filters/noise.svg' | relative_url }}") 200px / 200px fixed;
     display: flex;
     justify-content: center;
+    margin-bottom: 1em;
     position: relative;
     z-index: 2;
 }
