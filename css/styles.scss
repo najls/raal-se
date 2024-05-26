@@ -130,7 +130,10 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
 }
 #changeLang:focus,
 #changeLang:hover { opacity: 100% }
-#changeLang .icon { height: 1.5em }
+#changeLang .icon {
+    background-color: rgb(var(--text-color));
+    height: 1.5em;
+}
 #changeLang span {
     font-size: .75em;
     font-weight: bold;
@@ -257,7 +260,7 @@ article.news time {
 
 article.release header { margin-bottom: 1.25em }
 article.release .image {
-    width: 100%;
+    width: 66%;
     max-width: 480px;
 }
 
