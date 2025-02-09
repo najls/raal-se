@@ -34,27 +34,27 @@
     --prim-color: 230, 50, 70;
 }
 
-#apple {
+.icon.apple {
     -webkit-mask: url("{{ '/assets/icons/apple.svg' | relative_url }}") no-repeat center;
             mask: url("{{ '/assets/icons/apple.svg' | relative_url }}") no-repeat center;
 }
-#download {
+.icon.download {
     -webkit-mask: url("{{ '/assets/icons/download.svg' | relative_url }}") no-repeat center;
             mask: url("{{ '/assets/icons/download.svg' | relative_url }}") no-repeat center;
 }
-#earthEurope {
+.icon.earth-europe {
     -webkit-mask: url("{{ '/assets/icons/earth-europe.svg' | relative_url }}") no-repeat center;
             mask: url("{{ '/assets/icons/earth-europe.svg' | relative_url }}") no-repeat center;
 }
-#facebook {
+.icon.facebook {
     -webkit-mask: url("{{ '/assets/icons/facebook.svg' | relative_url }}") no-repeat center;
             mask: url("{{ '/assets/icons/facebook.svg' | relative_url }}") no-repeat center;
 }
-#fileAudio {
+.icon.file-audio {
     -webkit-mask: url("{{ '/assets/icons/file-audio.svg' | relative_url }}") no-repeat center;
             mask: url("{{ '/assets/icons/file-audio.svg' | relative_url }}") no-repeat center;
 }
-#spotify {
+.icon.spotify {
     -webkit-mask: url("{{ '/assets/icons/spotify.svg' | relative_url }}") no-repeat center;
             mask: url("{{ '/assets/icons/spotify.svg' | relative_url }}") no-repeat center;
 }
