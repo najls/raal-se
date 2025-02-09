@@ -231,7 +231,8 @@ article section { margin-bottom: 2em }
     margin-right: 1em;
 }
 
-article.news, article.release { margin-bottom: 3em }
+article.news, article.release { margin-bottom: 6em }
+li:last-child article.news, li:last-child article.release { margin-bottom: 3em }
 article.news .image img, article.release .image img {
     width: 100%;
     height: 100%;
