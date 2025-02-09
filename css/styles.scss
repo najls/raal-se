@@ -28,6 +28,12 @@
     src: url("{{ '/assets/fonts/AlumniSans-Regular.ttf' | relative_url }}") format('truetype');
 }
 
+:root {
+    --bg-color: 19, 4, 17;
+    --text-color: 240, 240, 250;
+    --prim-color: 230, 50, 70;
+}
+
 #apple {
     -webkit-mask: url("{{ '/assets/icons/apple.svg' | relative_url }}") no-repeat center;
             mask: url("{{ '/assets/icons/apple.svg' | relative_url }}") no-repeat center;
@@ -61,13 +67,6 @@ span.icon {
 span.icon:first-child { margin-right: .25em }
 span.icon:last-child { margin-left: .25em }
 
-:root {
-    --bg-color: 19, 4, 17;
-    --text-color: 240, 240, 250;
-    /* --prim-color: 230, 50, 70; */
-    --prim-color: 0, 190, 140;
-}
-
 * { box-sizing: border-box }
 
 body {
@@ -76,7 +75,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Open Sans', Arial, sans-serif;
-    font-size: clamp(0.875rem, calc(0.784rem + 0.3883vw), 1.25rem); /* min-width: 375px, max-width: 1920px*/
+    font-size: clamp(.875rem, calc(.784rem + .3883vw), 1.25rem); // min-width: 375px, max-width: 1920px
     margin: 0;
     min-height: 100dvh;
 }
@@ -145,25 +144,16 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
     background: radial-gradient(ellipse at 50% 150%, rgb(var(--prim-color)) 15%, rgba(var(--bg-color), .5) 75%),
         url("{{ '/assets/filters/noise.svg' | relative_url }}") 200px / 200px fixed;
     filter: brightness(.875) contrast(1.5);
-    display: flex;
-    flex-wrap: wrap;
-    align-content: end;
-    justify-content: center;
-    font-size: clamp(3rem, calc(1.301rem + 7.2492vw), 10rem); /* min-width: 375px, max-width: 1920px*/
-    height: 2em;
     position: relative;
-    z-index: 1;
+    text-align: center;
+    z-index: 5;
 }
-#mainHeader h1 {
-    color: rgb(var(--bg-color));
+#mainHeader img {
+    margin-bottom: -26.5%;
     mix-blend-mode: overlay;
-    font-family: Tahoma, Verdana, sans-serif;
-    font-size: inherit;
-    letter-spacing: clamp(0em, 8.5333vw, 2em);
-    line-height: .75;
-    margin: 0;
-    text-indent: clamp(0em, 6.9333vw, 1.625em);
-    text-transform: uppercase;
+    pointer-events: none;
+    width: 100%;
+    max-width: 1080px;
 }
 
 #mainNav {
@@ -284,6 +274,10 @@ article.release .image {
 
 @media(min-width: 375px) {
     .narrow { width: clamp(375px, 50vw, 960px) }
+}
+
+@media(min-width: 1080px) {
+    #mainHeader { height: 528px }
 }
 
 /* https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */
