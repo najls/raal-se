@@ -1,18 +1,18 @@
 {% if page.lang == "sv" %}
-    {% assign spotify_link_text = "Lyssna på Raal på Spotify" %}
+    {% assign youtube_link_text = "Lyssna på Raal på YouTube Music" %}
     {% assign apple_link_text = "Lyssna på Raal på Apple Music" %}
     {% assign facebook_link_lang = "Hälsa på Raal på Facebook" %}
 {% else %}
-    {% assign spotify_link_text = "Listen to Raal on Spotify" %}
+    {% assign youtube_link_text = "Listen to Raal on YouTube Music" %}
     {% assign apple_link_text = "Listen to Raal on Apple Music" %}
     {% assign facebook_link_lang = "Visit Raal on Facebook" %}
 {% endif %}
 <footer class="narrow" id="mainFooter">
     <ul>
         <li>
-            <a href="https://open.spotify.com/artist/1vJfq0cCqkgWZawApStGaq?si=Ld6YFLOxRtymmxEvJ26WPw">
-                <div class="icon spotify" aria-hidden="true"></div>
-                <span class="sr-only">{{ spotify_link_text }}</span>
+            <a href="https://music.youtube.com/channel/UChs2BDj773LsjA5kHwY2-Cw">
+                <div class="icon youtube-music" aria-hidden="true"></div>
+                <span class="sr-only">{{ youtube_link_text }}</span>
             </a>
         </li>
         <li>
