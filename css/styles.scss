@@ -273,6 +273,42 @@ article.release .image {
 }
 #mainFooter a:hover .icon { background-color: rgb(var(--prim-color)) }
 
+.accordion {
+    border-color: rgb(var(--prim-color));
+    border-style: solid;
+    border-width: .063em 0 .063em 0;
+}
+.accordion h2, .accordion h3 { margin: 0 }
+.accordion button {
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    padding: .5em;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+.accordion button::after {
+    background-color: rgb(var(--text-color));
+    content: '';
+    -webkit-mask: url("{{ '/assets/icons/chevron-down.svg' | relative_url }}") no-repeat center;
+            mask: url("{{ '/assets/icons/chevron-down.svg' | relative_url }}") no-repeat center;
+    position: absolute;
+    top: 50%;
+    right: .5em;
+    transform: translateY(-50%);
+    width: 1em;
+    height: 1em;
+}
+.accordion button[aria-expanded="true"]::after {
+    -webkit-mask: url("{{ '/assets/icons/chevron-up.svg' | relative_url }}") no-repeat center;
+            mask: url("{{ '/assets/icons/chevron-up.svg' | relative_url }}") no-repeat center;
+}
+.accordion > div { padding: 0 .5em }
+
 @media(min-width: 375px) {
     .narrow { width: clamp(375px, 50vw, 960px) }
 }
