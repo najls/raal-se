@@ -54,9 +54,9 @@
     -webkit-mask: url("{{ '/assets/icons/file-audio.svg' | relative_url }}") no-repeat center;
             mask: url("{{ '/assets/icons/file-audio.svg' | relative_url }}") no-repeat center;
 }
-.icon.spotify {
-    -webkit-mask: url("{{ '/assets/icons/spotify.svg' | relative_url }}") no-repeat center;
-            mask: url("{{ '/assets/icons/spotify.svg' | relative_url }}") no-repeat center;
+.icon.youtube-music {
+    -webkit-mask: url("{{ '/assets/icons/youtube-music.svg' | relative_url }}") no-repeat center;
+            mask: url("{{ '/assets/icons/youtube-music.svg' | relative_url }}") no-repeat center;
 }
 .icon { background-color: rgb(var(--text-color)) }
 span.icon {
