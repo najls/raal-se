@@ -9,8 +9,8 @@ permalink: /feeds/nyheter.xml
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>{{ page.title | xml_escape }}</title>
-        <link>{{ site.url }}</link>
-        <atom:link href="{{ site.url }}{{ page.permalink }}" rel="self" type="application/rss+xml" />
+        <link>https://www.raal.se/</link>
+        <atom:link href="https://www.raal.se{{ page.permalink }}" rel="self" type="application/rss+xml" />
         <description>{{ page.description | xml_escape }}</description>
         <language>{{ page.lang }}</language>
         <lastBuildDate>{{ site.posts.last.date | date_to_rfc822 }}</lastBuildDate>
@@ -18,11 +18,11 @@ permalink: /feeds/nyheter.xml
         {% for post in posts %}
             <item>
                 <title>{{ post.title | xml_escape }}</title>
-                <link>{{ site.url }}{{ page.page }}#{{ post.r_id }}</link>
+                <link>https://www.raal.se{{ page.page }}#{{ post.r_id }}</link>
                 <description>{{ post.content | xml_escape }}</description>
-                <guid>{{ site.url }}/{{ post.r_id | append: post.date | uri_escape }}</guid>
+                <guid>https://www.raal.se/{{ post.r_id | append: post.date | uri_escape }}</guid>
                 <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-                <source url="{{ site.url }}{{ page.permalink }}">Raal</source>
+                <source url="https://www.raal.se{{ page.permalink }}">Raal</source>
             </item>
         {% endfor %}
     </channel>
