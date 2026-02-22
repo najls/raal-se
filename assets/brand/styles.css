@@ -173,29 +173,31 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
 }
 #mainNav li { padding: .5em 1em }
 #mainNav li:first-child {
-    border-right: .063em solid rgb(var(--prim-color));
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
+    grid-row-end: 2;
+}
+#mainNav li:nth-child(2) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
     grid-row-end: 3;
+    padding: .5em 1em clamp(1em, calc(1em + 1.6667vw), 3em)
+}
+#mainNav li:not(:nth-child(3)) {
+    border-right: .063em solid rgb(var(--prim-color));
     text-align: right;
 }
-#mainNav li:not(:first-child) { border-left: .063em solid rgb(var(--prim-color)) }
-#mainNav li:nth-child(2) {
+#mainNav li:nth-child(3) {
+    border-left: .063em solid rgb(var(--prim-color));
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
-    grid-row-end: 2;
-}
-#mainNav li:nth-child(3) {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
     grid-row-end: 3;
 }
-#mainNav li:last-child { padding: .5em 1em clamp(1em, calc(1em + 1.6667vw), 3em) }
 #mainNav a {
-    font-size: 1.375em;
+    font-size: 1.5em;
     font-family: 'Alumni Sans', Arial, sans-serif;
     letter-spacing: .25em;
     margin-right: -.25em;
