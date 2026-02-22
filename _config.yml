@@ -1,4 +1,6 @@
 url: https://najls.github.io
 languages: [en, sv]
 permalink: /:name/
-version: 20251018
+version: 20260222
+collections:
+  - releases
