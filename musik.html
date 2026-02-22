@@ -13,9 +13,9 @@ translate: /music/
                     <time datetime="{{ release.date | release: '%Y' }}">{{ release.date | date: "%Y" }}</time>
                 </header>
                 {% if release.image %}
-                    <section class="image">
+                    <div class="image">
                         <img src="{{ release.image.path }}" alt="{{ release.image.alt }}">
-                    </section>
+                    </div>
                 {% endif %}
                 {% if release.files %}
                     <section>
@@ -33,7 +33,7 @@ translate: /music/
                     <h3>
                         <button id="accordionButton{{ release.r_id }}" aria-controls="accordionContent{{ release.r_id }}" aria-expanded="false">Text</button>
                     </h3>
-                    <div id="accordionContent{{ release.r_id }}" aria-labelledby="accordionButton{{ release.r_id }}" hidden>
+                    <div id="accordionContent{{ release.r_id }}" aria-labelledby="accordionButton{{ release.r_id }}" hidden role="region">
                         {{ release.content }}
                     </div>
                 </section>

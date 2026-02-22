@@ -249,8 +249,10 @@ article.news time {
     font-size: .875em;
 }
 
+article.release { text-align: center }
 article.release header { margin-bottom: 1.25em }
 article.release .image {
+    margin: 0 auto 2em;
     width: 50%;
     max-width: 480px;
 }
