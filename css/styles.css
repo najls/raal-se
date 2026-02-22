@@ -1,31 +1,29 @@
----
----
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: normal;
-    src: url("{{ '/assets/fonts/OpenSans-Light.ttf' | relative_url }}") format('truetype');
+    src: url('/assets/fonts/OpenSans-Light.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: bold;
-    src: url("{{ '/assets/fonts/OpenSans-SemiBold.ttf' | relative_url }}") format('truetype');
+    src: url('/assets/fonts/OpenSans-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Open Sans';
     font-style: italic;
     font-weight: normal;
-    src: url("{{ '/assets/fonts/OpenSans-LightItalic.ttf' | relative_url }}") format('truetype');
+    src: url('/assets/fonts/OpenSans-LightItalic.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Alumni Sans';
     font-style: normal;
     font-weight: normal;
-    src: url("{{ '/assets/fonts/AlumniSans-Regular.ttf' | relative_url }}") format('truetype');
+    src: url('/assets/fonts/AlumniSans-Regular.ttf') format('truetype');
 }
 
 :root {
@@ -35,28 +33,28 @@
 }
 
 .icon.apple {
-    -webkit-mask: url("{{ '/assets/icons/apple.svg' | relative_url }}") no-repeat center;
-            mask: url("{{ '/assets/icons/apple.svg' | relative_url }}") no-repeat center;
+    -webkit-mask: url('/assets/icons/apple.svg') no-repeat center;
+            mask: url('/assets/icons/apple.svg') no-repeat center;
 }
 .icon.download {
-    -webkit-mask: url("{{ '/assets/icons/download.svg' | relative_url }}") no-repeat center;
-            mask: url("{{ '/assets/icons/download.svg' | relative_url }}") no-repeat center;
+    -webkit-mask: url('/assets/icons/download.svg') no-repeat center;
+            mask: url('/assets/icons/download.svg') no-repeat center;
 }
 .icon.earth-europe {
-    -webkit-mask: url("{{ '/assets/icons/earth-europe.svg' | relative_url }}") no-repeat center;
-            mask: url("{{ '/assets/icons/earth-europe.svg' | relative_url }}") no-repeat center;
+    -webkit-mask: url('/assets/icons/earth-europe.svg') no-repeat center;
+            mask: url('/assets/icons/earth-europe.svg') no-repeat center;
 }
 .icon.facebook {
-    -webkit-mask: url("{{ '/assets/icons/facebook.svg' | relative_url }}") no-repeat center;
-            mask: url("{{ '/assets/icons/facebook.svg' | relative_url }}") no-repeat center;
+    -webkit-mask: url('/assets/icons/facebook.svg') no-repeat center;
+            mask: url('/assets/icons/facebook.svg') no-repeat center;
 }
 .icon.file-audio {
-    -webkit-mask: url("{{ '/assets/icons/file-audio.svg' | relative_url }}") no-repeat center;
-            mask: url("{{ '/assets/icons/file-audio.svg' | relative_url }}") no-repeat center;
+    -webkit-mask: url('/assets/icons/file-audio.svg') no-repeat center;
+            mask: url('/assets/icons/file-audio.svg') no-repeat center;
 }
 .icon.youtube-music {
-    -webkit-mask: url("{{ '/assets/icons/youtube-music.svg' | relative_url }}") no-repeat center;
-            mask: url("{{ '/assets/icons/youtube-music.svg' | relative_url }}") no-repeat center;
+    -webkit-mask: url('/assets/icons/youtube-music.svg') no-repeat center;
+            mask: url('/assets/icons/youtube-music.svg') no-repeat center;
 }
 .icon { background-color: rgb(var(--text-color)) }
 span.icon {
@@ -75,7 +73,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Open Sans', Arial, sans-serif;
-    font-size: clamp(.875rem, calc(.784rem + .3883vw), 1.25rem); // min-width: 375px, max-width: 1920px
+    font-size: clamp(.875rem, calc(.784rem + .3883vw), 1.25rem); /* min-width: 375px, max-width: 1920px */
     margin: 0;
     min-height: 100dvh;
 }
@@ -142,7 +140,7 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
 #mainHeader {
     background: rgb(var(--prim-color));
     background: radial-gradient(ellipse at 50% 150%, rgb(var(--prim-color)) 15%, rgba(var(--bg-color), .5) 75%),
-        url("{{ '/assets/filters/noise.svg' | relative_url }}") 200px / 200px fixed;
+        url('/assets/filters/noise.svg') 200px / 200px fixed;
     filter: brightness(.875) contrast(1.5);
     position: relative;
     text-align: center;
@@ -159,7 +157,7 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
 #mainNav {
     background-color: rgb(var(--bg-color));
     background: radial-gradient(ellipse at 50% -150%, rgba(var(--prim-color), .75) 15%, rgb(var(--bg-color)) 50%),
-        url("{{ '/assets/filters/noise.svg' | relative_url }}") 200px / 200px fixed;
+        url('/assets/filters/noise.svg') 200px / 200px fixed;
     display: flex;
     justify-content: center;
     margin-bottom: 1em;
@@ -294,8 +292,8 @@ article.release .image {
 .accordion button::after {
     background-color: rgb(var(--text-color));
     content: '';
-    -webkit-mask: url("{{ '/assets/icons/chevron-down.svg' | relative_url }}") no-repeat center;
-            mask: url("{{ '/assets/icons/chevron-down.svg' | relative_url }}") no-repeat center;
+    -webkit-mask: url('/assets/icons/chevron-down.svg') no-repeat center;
+            mask: url('/assets/icons/chevron-down.svg') no-repeat center;
     position: absolute;
     top: 50%;
     right: .5em;
@@ -304,8 +302,8 @@ article.release .image {
     height: 1em;
 }
 .accordion button[aria-expanded="true"]::after {
-    -webkit-mask: url("{{ '/assets/icons/chevron-up.svg' | relative_url }}") no-repeat center;
-            mask: url("{{ '/assets/icons/chevron-up.svg' | relative_url }}") no-repeat center;
+    -webkit-mask: url('/assets/icons/chevron-up.svg') no-repeat center;
+            mask: url('/assets/icons/chevron-up.svg') no-repeat center;
 }
 .accordion > div { padding: 0 .5em }
 
