@@ -23,7 +23,7 @@ translate: /musik/
                         <ul class="inline">
                             {% for file in release.files %}
                                 <li>
-                                    <a href="{{ file.path }}" download="{{ file.name }}"><span class="upper">{{ file.type }}</span><span class="icon file-audio" aria-hidden="true"></span></a>
+                                    <a href="{{ file.path }}" download="{{ file.name }}"><span class="upper">{{ file.type.name }}</span><span class="icon file-audio" aria-hidden="true"></span></a>
                                 </li>
                             {% endfor %}
                         </ul>

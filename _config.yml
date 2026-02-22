@@ -3,4 +3,6 @@ languages: [en, sv]
 permalink: /:name/
 version: 20260222
 collections:
-  - releases
+  feeds:
+    output: true
+  releases:

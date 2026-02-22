@@ -11,4 +11,8 @@
     <link rel="apple-touch-icon" href="{{ '/assets/brand/apple-touch-icon.png' | relative_url }}">
 
     <link rel="stylesheet" href="{{ '/assets/brand/styles.css?v=' | append: site.version | relative_url }}">
+
+    {% for feed in site.feeds %}
+        <link rel="alternate" title="{{ feed.title | xml_escape }}" type="application/rss+xml" href="{{ feed.permalink }}">
+    {% endfor %}
 </head>
