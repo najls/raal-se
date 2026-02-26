@@ -14,6 +14,11 @@ permalink: /feeds/musik.xml
         <description>{{ page.description | xml_escape }}</description>
         <language>{{ page.lang }}</language>
         <lastBuildDate>{{ site.releases.last.date | date_to_rfc822 }}</lastBuildDate>
+        <image>
+            <url>{{ '/assets/brand/apple-touch-icon.png' | relative_url }}</url>
+            <title>{{ page.title | xml_escape }}</title>
+            <link>https://www.raal.se/</link>
+        </image>
         {% for release in site.releases reversed %}
             <item>
                 <title>{{ release.title | xml_escape }}</title>

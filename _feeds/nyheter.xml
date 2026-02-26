@@ -14,6 +14,11 @@ permalink: /feeds/nyheter.xml
         <description>{{ page.description | xml_escape }}</description>
         <language>{{ page.lang }}</language>
         <lastBuildDate>{{ site.posts.last.date | date_to_rfc822 }}</lastBuildDate>
+        <image>
+            <url>{{ '/assets/brand/apple-touch-icon.png' | relative_url }}</url>
+            <title>{{ page.title | xml_escape }}</title>
+            <link>https://www.raal.se/</link>
+        </image>
         {% assign posts = site.posts | where: "lang", page.lang %}
         {% for post in posts %}
             <item>
