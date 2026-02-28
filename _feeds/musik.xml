@@ -2,36 +2,11 @@
 lang: sv
 title: Raal - Musik
 description: Den senaste musiken från Raal rakt in i din mobil eller nåt.
-page: /musik
+source: /musik
 permalink: /feeds/musik.xml
+mime: application/rss+xml
+uuid: a0c30f3d-969f-494b-98e6-7c24d4c4d978
 ---
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>{{ page.title | xml_escape }}</title>
-        <link>https://www.raal.se/</link>
-        <atom:link href="https://www.raal.se{{ page.permalink }}" rel="self" type="application/rss+xml" />
-        <description>{{ page.description | xml_escape }}</description>
-        <language>{{ page.lang }}</language>
-        <lastBuildDate>{{ site.releases.last.date | date_to_rfc822 }}</lastBuildDate>
-        <image>
-            <url>https://www.raal.se/assets/brand/apple-touch-icon.png</url>
-            <title>{{ page.title | xml_escape }}</title>
-            <link>https://www.raal.se/</link>
-        </image>
-        {% for release in site.releases reversed %}
-            <item>
-                <title>{{ release.title | xml_escape }}</title>
-                <link>https://www.raal.se{{ page.page }}#{{ release.r_id }}</link>
-                {% for file in release.files %}
-                    {% if file.type.name == "mp3" %}
-                        <enclosure url="https://www.raal.se{{ file.path }}" length="{{ file.size }}" type="{{ file.type.mime }}" />
-                    {% endif %}
-                {% endfor %}
-                <guid>https://www.raal.se/{{ release.r_id | append: release.date | uri_escape }}</guid>
-                <pubDate>{{ release.date | date_to_rfc822 }}</pubDate>
-                <source url="https://www.raal.se{{ page.permalink }}">Raal</source>
-            </item>
-        {% endfor %}
-    </channel>
-</rss>
+
+{% assign items = site.releases | reverse -%}
+{% include feeds/itunes.xml channel=page items=items %}

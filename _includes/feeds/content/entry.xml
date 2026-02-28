@@ -1,0 +1,9 @@
+<entry>
+    <title>{{ include.entry.title | xml_escape }}</title>
+    <updated>{{ include.entry.date | date_to_xmlschema }}</updated>
+    <id>urn:uuid:{{ include.entry.uuid }}</id>
+    <link rel="via" type="text/html" href="{{ site.url }}{{ include.feed.source }}#{{ include.entry.cid }}" />
+    <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">{{ include.entry.content }}</div>
+    </content>
+</entry>

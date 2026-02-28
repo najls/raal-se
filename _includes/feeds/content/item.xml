@@ -1,0 +1,13 @@
+<item>
+    <title>{{ include.item.title | xml_escape }}</title>
+    <link>{{ site.url }}{{ include.channel.source }}#{{ include.item.cid }}</link>
+    {% for file in include.item.files %}
+        {% if file.type.name == "mp3" %}
+            <enclosure url="{{ site.url }}{{ file.path }}" length="{{ file.size }}" type="{{ file.type.mime }}" />
+            <itunes:duration>{{ file.length }}</itunes:duration>
+        {% endif %}
+    {% endfor %}
+    <guid>{{ site.url }}/itunes/{{ item.uuid }}</guid>
+    <pubDate>{{ include.item.date | date_to_rfc822 }}</pubDate>
+    <source url="{{ site.url }}{{ include.channel.permalink }}">Raal</source>
+</item>

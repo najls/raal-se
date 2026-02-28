@@ -9,7 +9,7 @@ translate: /musik/
         <li>
             <article class="release">
                 <header>
-                    <h2 id="{{ release.r_id }}">{{ release.title }}</h2>
+                    <h2 id="{{ release.cid }}">{{ release.title }}</h2>
                     <time datetime="{{ release.date | release: '%Y' }}">{{ release.date | date: "%Y" }}</time>
                 </header>
                 {% if release.image %}
@@ -31,9 +31,9 @@ translate: /musik/
                 {% endif %}
                 <section class="accordion">
                     <h3>
-                        <button id="accordionButton{{ release.r_id }}" aria-controls="accordionContent{{ release.r_id }}" aria-expanded="false">Lyrics</button>
+                        <button id="accordionButton{{ release.cid }}" aria-controls="accordionContent{{ release.cid }}" aria-expanded="false">Lyrics</button>
                     </h3>
-                    <div id="accordionContent{{ release.r_id }}" aria-labelledby="accordionButton{{ release.r_id }}" hidden role="region">
+                    <div id="accordionContent{{ release.cid }}" aria-labelledby="accordionButton{{ release.cid }}" hidden role="region">
                         {{ release.content }}
                     </div>
                 </section>

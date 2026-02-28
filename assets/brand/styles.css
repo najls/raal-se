@@ -52,6 +52,10 @@
     -webkit-mask: url('/assets/icons/file-audio.svg') no-repeat center;
             mask: url('/assets/icons/file-audio.svg') no-repeat center;
 }
+.icon.rss {
+    -webkit-mask: url('/assets/icons/rss.svg') no-repeat center;
+            mask: url('/assets/icons/rss.svg') no-repeat center;
+}
 .icon.youtube-music {
     -webkit-mask: url('/assets/icons/youtube-music.svg') no-repeat center;
             mask: url('/assets/icons/youtube-music.svg') no-repeat center;

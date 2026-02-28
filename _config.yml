@@ -1,7 +1,7 @@
-url: https://najls.github.io
+url: https://www.raal.se
 languages: [en, sv]
 permalink: /:name/
-version: 20260222
+version: 20260228
 collections:
   feeds:
     output: true
