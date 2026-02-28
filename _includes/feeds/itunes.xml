@@ -11,7 +11,7 @@
         <image>
             <url>{{ site.url }}/assets/brand/raal_144.png</url>
             <title>{{ include.channel.title | xml_escape }}</title>
-            <link>{{ site.url }}{{ include.channel.permalink }}"</link>
+            <link>{{ site.url }}{{ include.channel.permalink }}</link>
         </image>
         <itunes:category text="Music" />
         <itunes:image href="{{ site.url }}/assets/brand/raal_1400.png" />
