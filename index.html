@@ -7,19 +7,19 @@ translate: /en/
 <ul class="collection">
     {% assign posts = site.posts | where: "lang", page.lang %}
     {% for post in posts %}
-        <li>
-            <article class="news">
-                {% if post.image %}
-                    <div class="image">
-                        <img src="{{ post.image.path }}" alt="{{ post.image.alt }}">
-                    </div>
-                {% endif %}
-                <header>
-                    <h2>{{ post.title }}</h2>
-                    <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{% include date.html date=post.date %}</time>
-                </header>
-                {{ post.content }}
-            </article>
-        </li>
+    <li>
+        <article class="news">
+            {% if post.image %}
+            <div class="image">
+                <img src="{{ post.image.path }}" alt="{{ post.image.alt }}">
+            </div>
+            {% endif %}
+            <header>
+                <h2 id="{{ post.cid }}">{{ post.title }}</h2>
+                <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{% include date.html date=post.date %}</time>
+            </header>
+            {{ post.content }}
+        </article>
+    </li>
     {% endfor %}
 </ul>

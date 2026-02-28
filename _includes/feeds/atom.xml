@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ include.feed.lang }}">
+    <title>{{ include.feed.title | xml_escape }}</title>
+    <subtitle>{{ include.feed.description | xml_escape }}</subtitle>
+    <author>
+        <name>Webmaster</name>
+    </author>
+    <updated>{% for entry in include.entries limit:1 %}{{ entry.date | date_to_xmlschema }}{% endfor %}</updated>
+    <id>urn:uuid:{{ include.feed.uuid }}</id>
+    <link type="text/html" href="{{ site.url }}{{ include.feed.source }}" />
+    <link rel="self" type="application/atom+xml" href="{{ site.url }}{{ include.feed.permalink }}" />
+    <icon>{{ site.url }}/assets/brand/favicon.svg</icon>
+    {% for entry in include.entries %}
+        {% include feeds/content/entry.xml feed=include.feed entry=entry %}
+    {% endfor %}
+</feed>
