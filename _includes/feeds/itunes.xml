@@ -9,13 +9,13 @@
         <language>{{ include.channel.lang }}</language>
         <lastBuildDate>{% for item in include.items limit:1 %}{{ item.date | date_to_rfc822 }}{% endfor %}</lastBuildDate>
         <image>
-            <url>{{ site.url }}/assets/brand/raal_144.png</url>
+            <url>{{ site.url }}{{ feed.image }}</url>
             <title>{{ include.channel.title | xml_escape }}</title>
             <link>{{ site.url }}{{ include.channel.permalink }}</link>
         </image>
-        <itunes:category text="Music" />
-        <itunes:image href="{{ site.url }}/assets/brand/raal_1400.png" />
-        <itunes:explicit>false</itunes:explicit>
+        <itunes:category text="{{ include.channel.itunes.category }}" />
+        <itunes:image href="{{ site.url }}{{ include.channel.itunes.image }}" />
+        <itunes:explicit>{{ include.channel.itunes.explicit }}</itunes:explicit>
         {% for item in include.items %}
             {% include feeds/content/item.xml channel=include.channel item=item %}
         {% endfor %}
