@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{ '/assets/brand/styles.css?v=' | append: site.version | relative_url }}">
 
     {% for feed in site.feeds %}
-        <link rel="alternate" title="{{ feed.title | xml_escape }}" type="{{ feed.mime }}" href="{{ feed.permalink }}">
+        {% unless feed.uuid == "d33f4134-b1dd-4482-9f7e-685c224da740" %}
+            <link rel="alternate" title="{{ feed.title | xml_escape }}" type="{{ feed.mime }}" href="{{ feed.permalink }}">
+        {% endunless %}
     {% endfor %}
 </head>

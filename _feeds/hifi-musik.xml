@@ -1,0 +1,18 @@
+---
+lang: sv
+title: Raal
+description: Musik från Raal i bländande hi-fi
+source: /musik
+permalink: /feeds/hifi-musik.xml
+mime: application/rss+xml
+uuid: d33f4134-b1dd-4482-9f7e-685c224da740
+image: /assets/brand/raal_144_alt.png
+itunes:
+  category: Music
+  image: /assets/brand/raal_1400_alt.png
+  explicit: false
+quality: high
+---
+
+{% assign items = site.releases | reverse -%}
+{% include feeds/itunes.xml channel=page items=items %}
