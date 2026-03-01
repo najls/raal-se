@@ -2,12 +2,16 @@
     <title>{{ include.item.title | xml_escape }}</title>
     <link>{{ site.url }}{{ include.channel.source }}#{{ include.item.cid }}</link>
     {% for file in include.item.files %}
-        {% if file.type.name == "mp3" %}
-            <enclosure url="{{ site.url }}{{ file.path }}" length="{{ file.size }}" type="{{ file.type.mime }}" />
-            <itunes:duration>{{ file.length }}</itunes:duration>
+        {% if include.channel.quality == "low" and file.type.name == "mp3" %}
+            {% assign enclosure = file %}
+        {% elsif include.channel.quality == "high" and file.type.name == "flac" %}
+            {% assign enclosure = file %}
         {% endif %}
     {% endfor %}
+    {% if enclosure %}
+        <enclosure url="{{ site.url }}{{ enclosure.path }}" length="{{ enclosure.size }}" type="{{ enclosure.type.mime }}" />
+        <itunes:duration>{{ enclosure.length }}</itunes:duration>
+    {% endif %}
     <guid>{{ site.url }}/itunes/{{ item.uuid }}</guid>
     <pubDate>{{ include.item.date | date_to_rfc822 }}</pubDate>
-    <source url="{{ site.url }}{{ include.channel.permalink }}">Raal</source>
 </item>

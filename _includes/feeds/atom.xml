@@ -3,7 +3,7 @@
     <title>{{ include.feed.title | xml_escape }}</title>
     <subtitle>{{ include.feed.description | xml_escape }}</subtitle>
     <author>
-        <name>Webmaster</name>
+        <name>Raal</name>
     </author>
     <updated>{% for entry in include.entries limit:1 %}{{ entry.date | date_to_xmlschema }}{% endfor %}</updated>
     <id>urn:uuid:{{ include.feed.uuid }}</id>

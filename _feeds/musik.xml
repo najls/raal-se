@@ -1,7 +1,7 @@
 ---
 lang: sv
-title: Raal - Musik
-description: Den senaste musiken från Raal rakt in i din mobil eller nåt.
+title: Raal
+description: Musik från Raal rakt in i din mobil eller nåt
 source: /musik
 permalink: /feeds/musik.xml
 mime: application/rss+xml
@@ -11,6 +11,7 @@ itunes:
   category: Music
   image: /assets/brand/raal_1400.png
   explicit: false
+quality: low
 ---
 
 {% assign items = site.releases | reverse -%}

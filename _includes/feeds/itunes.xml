@@ -13,6 +13,7 @@
             <title>{{ include.channel.title | xml_escape }}</title>
             <link>{{ site.url }}{{ include.channel.permalink }}</link>
         </image>
+        <itunes:author>Raal</itunes:author>
         <itunes:category text="{{ include.channel.itunes.category }}" />
         <itunes:image href="{{ site.url }}{{ include.channel.itunes.image }}" />
         <itunes:explicit>{{ include.channel.itunes.explicit }}</itunes:explicit>
