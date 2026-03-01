@@ -4,7 +4,7 @@ lang: en
 cid: Skinnes
 uuid: b4ef1d1d-b069-46e4-b8f6-d97753ff80da
 image:
-  path: /assets/blobs/skinnes_512x512.jpg
+  path: /assets/blobs/skinnes_1400.jpg
   alt:
 ---
 
