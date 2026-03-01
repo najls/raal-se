@@ -6,6 +6,11 @@ source: /musik
 permalink: /feeds/musik.xml
 mime: application/rss+xml
 uuid: a0c30f3d-969f-494b-98e6-7c24d4c4d978
+image: /assets/brand/raal_144.png
+itunes:
+  category: Music
+  image: /assets/brand/raal_1400.png
+  explicit: false
 ---
 
 {% assign items = site.releases | reverse -%}

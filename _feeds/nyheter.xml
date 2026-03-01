@@ -6,6 +6,7 @@ source: /
 permalink: /feeds/nyheter.xml
 mime: application/atom+xml
 uuid: 44680664-ddd8-41cc-97f5-0caa75d947ff
+image: /assets/brand/favicon.svg
 ---
 
 {% assign entries = site.posts | where: "lang", page.lang -%}
