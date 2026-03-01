@@ -12,6 +12,7 @@
         <enclosure url="{{ site.url }}{{ enclosure.path }}" length="{{ enclosure.size }}" type="{{ enclosure.type.mime }}" />
         <itunes:duration>{{ enclosure.length }}</itunes:duration>
     {% endif %}
+    <itunes:image href="{{ site.url }}{{ item.image.path }}" />
     <guid>{{ site.url }}/itunes/{{ item.uuid }}</guid>
     <pubDate>{{ include.item.date | date_to_rfc822 }}</pubDate>
 </item>
