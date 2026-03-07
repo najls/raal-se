@@ -6,12 +6,14 @@ source: /musik
 permalink: /feeds/hifi-musik.xml
 mime: application/rss+xml
 uuid: d33f4134-b1dd-4482-9f7e-685c224da740
+uuidv5: dd78512b-9a10-56c9-a91a-b94c0361087f
 image: /assets/brand/raal_144_alt.png
 itunes:
   category: Music
   image: /assets/brand/raal_1400_alt.png
   explicit: false
 quality: high
+locked: "yes"
 ---
 
 {% assign items = site.releases | reverse -%}
