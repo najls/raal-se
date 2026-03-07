@@ -4,7 +4,7 @@ lang: en
 cid: Drekajus
 uuid: 44b0fbd4-ca86-401b-9a54-50296cdd6c18
 image:
-  path: /assets/blobs/drekajus_1400.jpg
+  path: https://media.raal.se/bild/drekajus_1400.jpg
   alt:
 ---
 

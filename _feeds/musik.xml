@@ -6,10 +6,10 @@ source: /musik
 permalink: /feeds/musik.xml
 mime: application/rss+xml
 uuid: a0c30f3d-969f-494b-98e6-7c24d4c4d978
-image: /assets/brand/raal_144.png
+image: https://media.raal.se/bild/raal_144.jpg
 itunes:
   category: Music
-  image: /assets/brand/raal_1400.png
+  image: https://media.raal.se/bild/raal_1400.jpg
   explicit: false
 podcast:
   guid: 8d1ec1fe-772c-5e73-b3b0-2b46f05e9b32

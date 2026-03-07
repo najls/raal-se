@@ -9,10 +9,10 @@
         {% endif %}
     {% endfor %}
     {% if enclosure %}
-        <enclosure url="{{ site.url }}{{ enclosure.path }}" length="{{ enclosure.size }}" type="{{ enclosure.type.mime }}" />
+        <enclosure url="{% unless enclosure.path contains "https://" %}{{ site.url }}{% endunless %}{{ enclosure.path }}" length="{{ enclosure.size }}" type="{{ enclosure.type.mime }}" />
         <itunes:duration>{{ enclosure.length }}</itunes:duration>
     {% endif %}
-    <itunes:image href="{{ site.url }}{{ item.image.path }}" />
+    <itunes:image href="{% unless item.image.path contains "https://" %}{{ site.url }}{% endunless %}{{ item.image.path }}" />
     <guid>{{ site.url }}/itunes/{{ item.uuid }}</guid>
     <pubDate>{{ include.item.date | date_to_rfc822 }}</pubDate>
 </item>

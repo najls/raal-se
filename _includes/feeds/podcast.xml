@@ -9,13 +9,13 @@
         <language>{{ include.channel.lang }}</language>
         <lastBuildDate>{% for item in include.items limit:1 %}{{ item.date | date_to_rfc822 }}{% endfor %}</lastBuildDate>
         <image>
-            <url>{{ site.url }}{{ include.channel.image }}</url>
+            <url>{% unless include.channel.image contains "https://" %}{{ site.url }}{% endunless %}{{ include.channel.image }}</url>
             <title>{{ include.channel.title | xml_escape }}</title>
             <link>{{ site.url }}{{ include.channel.permalink }}</link>
         </image>
         <itunes:author>Raal</itunes:author>
         <itunes:category text="{{ include.channel.itunes.category }}" />
-        <itunes:image href="{{ site.url }}{{ include.channel.itunes.image }}" />
+        <itunes:image href="{% unless include.channel.itunes.image contains "https://" %}{{ site.url }}{% endunless %}{{ include.channel.itunes.image }}" />
         <itunes:explicit>{{ include.channel.itunes.explicit }}</itunes:explicit>
         <podcast:guid>{{ include.channel.podcast.guid }}</podcast:guid>
         <podcast:locked>{{ include.channel.podcast.locked }}</podcast:locked>
