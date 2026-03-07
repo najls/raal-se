@@ -6,15 +6,16 @@ source: /musik
 permalink: /feeds/musik.xml
 mime: application/rss+xml
 uuid: a0c30f3d-969f-494b-98e6-7c24d4c4d978
-uuidv5: 8d1ec1fe-772c-5e73-b3b0-2b46f05e9b32
 image: /assets/brand/raal_144.png
 itunes:
   category: Music
   image: /assets/brand/raal_1400.png
   explicit: false
+podcast:
+  guid: 8d1ec1fe-772c-5e73-b3b0-2b46f05e9b32
+  locked: "no"
 quality: low
-locked: "no"
 ---
 
 {% assign items = site.releases | reverse -%}
-{% include feeds/itunes.xml channel=page items=items %}
+{% include feeds/podcast.xml channel=page items=items %}

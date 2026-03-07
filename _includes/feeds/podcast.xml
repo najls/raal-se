@@ -17,8 +17,8 @@
         <itunes:category text="{{ include.channel.itunes.category }}" />
         <itunes:image href="{{ site.url }}{{ include.channel.itunes.image }}" />
         <itunes:explicit>{{ include.channel.itunes.explicit }}</itunes:explicit>
-        <podcast:guid>{{ include.channel.uuidv5 }}</podcast:guid>
-        <podcast:locked>{{ include.channel.locked }}</podcast:locked>
+        <podcast:guid>{{ include.channel.podcast.guid }}</podcast:guid>
+        <podcast:locked>{{ include.channel.podcast.locked }}</podcast:locked>
         {% for item in include.items %}
             {% include feeds/content/item.xml channel=include.channel item=item %}
         {% endfor %}
