@@ -1,28 +1,36 @@
 {% if page.lang == "sv" %}
     {% assign youtube_link_text = "Lyssna på Raal på YouTube Music" %}
     {% assign apple_link_text = "Lyssna på Raal på Apple Music" %}
+    {% assign rss_link_lang = "Lyssna på Raal i din podcast-app" %}
     {% assign facebook_link_lang = "Hälsa på Raal på Facebook" %}
 {% else %}
     {% assign youtube_link_text = "Listen to Raal on YouTube Music" %}
     {% assign apple_link_text = "Listen to Raal on Apple Music" %}
+    {% assign rss_link_lang = "Listen to Raal in your podcast app" %}
     {% assign facebook_link_lang = "Visit Raal on Facebook" %}
 {% endif %}
 <footer class="narrow" id="mainFooter">
     <ul>
         <li>
-            <a href="https://music.youtube.com/channel/UChs2BDj773LsjA5kHwY2-Cw">
+            <a href="https://music.youtube.com/channel/UChs2BDj773LsjA5kHwY2-Cw" rel="noreferrer">
                 <div class="icon youtube-music" aria-hidden="true"></div>
                 <span class="sr-only">{{ youtube_link_text }}</span>
             </a>
         </li>
         <li>
-            <a href="https://music.apple.com/us/artist/raal/1738183787">
+            <a href="https://music.apple.com/us/artist/raal/1738183787" rel="noreferrer">
                 <div class="icon apple" aria-hidden="true"></div>
                 <span class="sr-only">{{ apple_link_text }}</span>
             </a>
         </li>
         <li>
-            <a href="https://www.facebook.com/profile.php?id=61557678210571">
+            <a href="{{ site.url }}/feeds/musik.xml">
+                <div class="icon rss" aria-hidden="true"></div>
+                <span class="sr-only">{{ rss_link_lang }}</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.facebook.com/profile.php?id=61557678210571" rel="noreferrer">
                 <div class="icon facebook" aria-hidden="true"></div>
                 <span class="sr-only">{{ facebook_link_lang }}</span>
             </a>

@@ -1,7 +1,7 @@
 ---
 title: Skinnes
 lang: en
-cid: Skinnes
+cid: skinnes
 uuid: b4ef1d1d-b069-46e4-b8f6-d97753ff80da
 image:
   path: https://media.raal.se/bild/skinnes_1400.jpg

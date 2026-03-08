@@ -31,9 +31,9 @@ translate: /musik/
                 {% endif %}
                 <section class="accordion">
                     <h3>
-                        <button id="accordionButton{{ release.cid }}" aria-controls="accordionContent{{ release.cid }}" aria-expanded="false">Lyrics</button>
+                        <button id="accordionButton{{ release.cid | capitalize }}" aria-controls="accordionContent{{ release.cid | capitalize }}" aria-expanded="false">Lyrics</button>
                     </h3>
-                    <div id="accordionContent{{ release.cid }}" aria-labelledby="accordionButton{{ release.cid }}" hidden role="region">
+                    <div id="accordionContent{{ release.cid | capitalize }}" aria-labelledby="accordionButton{{ release.cid | capitalize }}" hidden role="region">
                         {{ release.content }}
                     </div>
                 </section>

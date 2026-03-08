@@ -1,7 +1,7 @@
 ---
 title: Drekajus
 lang: en
-cid: Drekajus
+cid: drekajus
 uuid: 44b0fbd4-ca86-401b-9a54-50296cdd6c18
 image:
   path: https://media.raal.se/bild/drekajus_1400.jpg
