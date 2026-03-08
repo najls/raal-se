@@ -16,7 +16,7 @@ translate: /
                 {% endif %}
                 <header>
                     <h2 id="{{ post.cid }}">{{ post.title }}</h2>
-                    <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%-d %B %Y' }}</time>
+                    <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%A, %-d %B %Y' }}</time>
                 </header>
                 {{ post.content }}
             </article>

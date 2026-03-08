@@ -1,5 +1,16 @@
-{% assign m = include.date | date: '%-m' %}
+{% assign d = include.date | date: '%A' %}
+{% case d %}
+    {% when 'Monday' %} Måndag
+    {% when 'Tuesday' %} Tisdag
+    {% when 'Wednesday' %} Onsdag
+    {% when 'Thursday' %} Torsdag
+    {% when 'Friday' %} Fredag
+    {% when 'Saturday' %} Lördag
+    {% when 'Sunday' %} Söndag
+{% endcase %}
+{{ 'den' }}
 {{ include.date | date: '%-d' }}
+{% assign m = include.date | date: '%-m' %}
 {% case m %}
     {% when '1' %} januari
     {% when '2' %} februari
