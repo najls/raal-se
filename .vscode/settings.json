@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "*.html": "liquid",
+    "*.xml": "liquid",
+    "*.md": "liquid"
+  },
+  "[liquid]": {
+    "editor.defaultFormatter": "sissel.shopify-liquid",
+  }
+}
