@@ -12,7 +12,7 @@ itunes:
   image: https://media.raal.se/bild/raal_1400.jpg
   explicit: false
 podcast:
-  guid: 8d1ec1fe-772c-5e73-b3b0-2b46f05e9b32
+  guid: 8d1ec1fe-772c-5e73-b3b0-2b46f05e9b32 # https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/tags/guid.md
   locked: "no"
 quality: low
 ---
