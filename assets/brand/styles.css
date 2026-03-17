@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
@@ -18,18 +20,19 @@
     font-weight: normal;
     src: url('/assets/fonts/OpenSans-LightItalic.ttf') format('truetype');
 }
-
+/* 
 @font-face {
     font-family: 'Alumni Sans';
     font-style: normal;
     font-weight: normal;
-    src: url('/assets/fonts/AlumniSans-Regular.ttf') format('truetype');
-}
+    src: url('https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap') format('truetype');
+} */
 
 :root {
     --bg-color: 19, 4, 17;
     --text-color: 240, 240, 250;
     --prim-color: 230, 50, 70;
+    --break: 960px;
 }
 
 .icon.apple {
@@ -77,7 +80,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Open Sans', Arial, sans-serif;
-    font-size: clamp(.875rem, calc(.784rem + .3883vw), 1.25rem); /* min-width: 375px, max-width: 1920px */
+    font-size: clamp(.875rem, calc(.784rem + .3883vw), 1.25rem); /* min-width: 375px; max-width: 1920px */
     margin: 0;
     min-height: 100dvh;
 }
@@ -113,7 +116,6 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
     position: absolute;
     left: 0;
     right: 0;
-    z-index: 3;
     text-align: center;
     text-decoration: none;
 }
@@ -128,7 +130,6 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
     padding: .5em;
     position: absolute;
     right: 0;
-    z-index: 2;
     text-decoration: none;
 }
 #changeLang:focus,
@@ -144,74 +145,153 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
 }
 
 #mainHeader {
-    background: rgb(var(--prim-color));
-    background: radial-gradient(ellipse at 50% 150%, rgb(var(--prim-color)) 15%, rgba(var(--bg-color), .5) 75%),
-        url('/assets/filters/noise.svg') 200px / 200px fixed;
-    filter: brightness(.875) contrast(1.5);
+    /* background: url('https://media.raal.se/bild/raa.png') no-repeat top left / contain; */
+    /* background: rgb(var(--bg-color)) url('https://media.raal.se/bild/raal-splash_1920_1400.jpg') no-repeat fixed 50% 0%; */
+    /* background-size: contain; */
+    /* background: radial-gradient(ellipse at 50% 150%, rgb(var(--prim-color)) 15%, rgba(var(--bg-color), .5) 75%),
+    url('/assets/filters/noise.svg') 200px / 200px fixed; */
+    /* filter: brightness(.875) contrast(1.5); */
+    /* margin-bottom: calc(100vw * .723 * -.396); */
+    /* background-color: coral; */
     position: relative;
-    text-align: center;
-    z-index: 5;
 }
-#mainHeader img {
-    margin-bottom: -26.5%;
-    mix-blend-mode: difference;
-    pointer-events: none;
-    width: 100%;
-    max-width: 1080px;
+.falling-tiles {
+    --height: calc(min(100vw, 1080px) * .77143);
+    position: relative;
+    width: calc(min(100vw, 1080px));
+    height: var(--height);
+}
+.falling-tiles .tile {
+    position: absolute;
+    height: 100%;
+}
+.falling-tiles .tile.t-0 {
+    /* background-color: blueviolet; */
+    left: 2.143%;
+    width: 32.286%;
+}
+.falling-tiles .tile.t-1 {
+    /* background-color: green; */
+    /* background-image: linear-gradient(to bottom, green 98%, black 2%); */
+    left: 23.071%;
+    width: 6%;
+}
+.falling-tiles .tile.t-2 {
+    /* background-color: aqua; */
+    /* background-image: linear-gradient(to bottom, aqua 82%, black 18%); */
+    left: 29.929%;
+    width: 18.785%;
+}
+.falling-tiles .tile.t-3 {
+    /* background-color: bisque; */
+    left: 50.643%;
+    width: 18.214%;
+}
+.falling-tiles .tile.t-4 {
+    /* background-color: blue; */
+    /* background-image: linear-gradient(to bottom, blue 92%, black 8%); */
+    left: 71.571%;
+    width: 5.215%;
+}
+.falling-tiles .tile.t-5 {
+    /* background-color: violet; */
+    left: 76.643%;
+    width: 21.357%;
+}
+.falling-tiles .tile::after {
+    /* background-color: goldenrod; */
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: '';
+    display: block;
+    position: sticky;
+}
+.falling-tiles .tile.t-0::after {
+    background-image: url('https://media.raal.se/bild/raal0.png');
+    top: calc(.01944 * var(--height));
+    height: 89.722%;
+}
+.falling-tiles .tile.t-1::after {
+    background-image: url('https://media.raal.se/bild/raal1.png');
+    margin-bottom: calc(var(--height) * .02);
+    top: calc(.29074 * var(--height));
+    height: 38.241%;
+}
+.falling-tiles .tile.t-2::after {
+    background-image: url('https://media.raal.se/bild/raal2.png');
+    margin-bottom: calc(var(--height) * .18);
+    top: calc(.02963 * var(--height));
+    height: 61.019%;
+}
+.falling-tiles .tile.t-3::after {
+    background-image: url('https://media.raal.se/bild/raal3.png');
+    top: calc(.02963 * var(--height));
+    height: 60.648%;
+}
+.falling-tiles .tile.t-4::after {
+    background-image: url('https://media.raal.se/bild/raal4.png');
+    margin-bottom: calc(var(--height) * .08);
+    top: calc(.02315 * var(--height));
+    height: 64.815%;
+}
+.falling-tiles .tile.t-5::after {
+    background-image: url('https://media.raal.se/bild/raal5.png');
+    margin-bottom: calc(var(--height) * .08148);
+    top: calc(.58611 * var(--height));
+    height: 33.241%;
 }
 
 #mainNav {
-    background-color: rgb(var(--bg-color));
-    background: radial-gradient(ellipse at 50% -150%, rgba(var(--prim-color), .75) 15%, rgb(var(--bg-color)) 50%),
-        url('/assets/filters/noise.svg') 200px / 200px fixed;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1em;
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* background: url('https://media.raal.se/bild/l.png') no-repeat bottom right / contain, linear-gradient(pink 33%, blue 100%); */
 }
 #mainNav ul {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 3fr 4fr;
     grid-template-rows: auto;
 }
-#mainNav li { padding: .5em 1em }
-#mainNav li:first-child {
+#mainNav li { text-align: center }
+/* #mainNav li:first-child {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
-}
-#mainNav li:nth-child(2) {
+} */
+/* #mainNav li:nth-child(2) {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 3;
     padding: .5em 1em clamp(1em, calc(1em + 1.6667vw), 3em)
-}
-#mainNav li:not(:nth-child(3)) {
+} */
+/* #mainNav li:not(:nth-child(3)) {
     border-right: .063em solid rgb(var(--prim-color));
     text-align: right;
-}
-#mainNav li:nth-child(3) {
+} */
+/* #mainNav li:nth-child(3) {
     border-left: .063em solid rgb(var(--prim-color));
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
-}
+} */
 #mainNav a {
-    font-size: 1.5em;
+    font-size: 1.75em;
     font-family: 'Alumni Sans', Arial, sans-serif;
     letter-spacing: .25em;
     margin-right: -.25em;
     text-decoration: none;
     text-transform: uppercase;
+    text-orientation: upright;
+    writing-mode: vertical-rl;
 }
 
 .narrow {
     margin: 0 auto;
-    padding: 0 1em 2em;
+    padding: 0 2em 2em;
     width: 100%;
 }
 
@@ -318,11 +398,7 @@ article.release .image {
 .accordion > div { padding: 0 .5em }
 
 @media(min-width: 375px) {
-    .narrow { width: clamp(375px, 50vw, 960px) }
-}
-
-@media(min-width: 1080px) {
-    #mainHeader { height: 528px }
+    .narrow { width: clamp(375px, 50vw, 768px) }
 }
 
 /* https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */

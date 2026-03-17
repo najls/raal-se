@@ -16,11 +16,16 @@
         <div class="icon earth-europe" aria-hidden="true"></div>
         <span>{{ lang_link_text }}</span>
     </a> -->
-    <header id="mainHeader">
+    <header class="falling-tiles" id="mainHeader">
         <h1 class="sr-only" lang="sv-SE-u-sd-seac">Raal</h1>
-        <img alt="" id="logotype" src="{{ '/assets/brand/logotype.svg' | relative_url }}">
+        <span class="tile t-0"></span>
+        <span class="tile t-1"></span>
+        <span class="tile t-2"></span>
+        <span class="tile t-3"></span>
+        <span class="tile t-4"></span>
+        <span class="tile t-5"></span>
+        {% include nav.html %}
     </header>
-    {% include nav.html %}
     <main class="narrow" id="main">
         {{ content }}
     </main>
