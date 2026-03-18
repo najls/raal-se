@@ -33,6 +33,8 @@
     --text-color: 240, 240, 250;
     --prim-color: 230, 50, 70;
     --break: 960px;
+    --logo-width: min(100vw, 960px);
+    --logo-height: calc(var(--logo-width) * .77143);
 }
 
 .icon.apple {
@@ -148,18 +150,18 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
     /* background: url('https://media.raal.se/bild/raa.png') no-repeat top left / contain; */
     /* background: rgb(var(--bg-color)) url('https://media.raal.se/bild/raal-splash_1920_1400.jpg') no-repeat fixed 50% 0%; */
     /* background-size: contain; */
-    /* background: radial-gradient(ellipse at 50% 150%, rgb(var(--prim-color)) 15%, rgba(var(--bg-color), .5) 75%),
-    url('/assets/filters/noise.svg') 200px / 200px fixed; */
     /* filter: brightness(.875) contrast(1.5); */
     /* margin-bottom: calc(100vw * .723 * -.396); */
     /* background-color: coral; */
+    background: radial-gradient(ellipse at top, black 35%, transparent 65%);
+    position: sticky;
+    top: calc(var(--logo-height) * -.56);
 }
 .falling-tiles {
-    --height: calc(min(100vw, 1080px) * .77143);
-    position: sticky;
-    top: calc(var(--height) * -.56);
-    width: calc(min(100vw, 1080px));
-    height: var(--height);
+    position: relative;
+    width: var(--logo-width);
+    height: var(--logo-height);
+    margin: 0 auto;
 }
 .falling-tiles .tile {
     position: absolute;
@@ -209,36 +211,36 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
 }
 .falling-tiles .tile.t-0::after {
     background-image: url('https://media.raal.se/bild/raal0.png');
-    top: calc(.01944 * var(--height));
+    top: calc(.01944 * var(--logo-height));
     height: 89.722%;
 }
 .falling-tiles .tile.t-1::after {
     background-image: url('https://media.raal.se/bild/raal1.png');
-    margin-bottom: calc(var(--height) * .02);
-    top: calc(.29074 * var(--height));
+    margin-bottom: calc(var(--logo-height) * .02);
+    top: calc(.29074 * var(--logo-height));
     height: 38.241%;
 }
 .falling-tiles .tile.t-2::after {
     background-image: url('https://media.raal.se/bild/raal2.png');
-    margin-bottom: calc(var(--height) * .18);
-    top: calc(.02963 * var(--height));
+    margin-bottom: calc(var(--logo-height) * .18);
+    top: calc(.02963 * var(--logo-height));
     height: 61.019%;
 }
 .falling-tiles .tile.t-3::after {
     background-image: url('https://media.raal.se/bild/raal3.png');
-    top: calc(.02963 * var(--height));
+    top: calc(.02963 * var(--logo-height));
     height: 60.648%;
 }
 .falling-tiles .tile.t-4::after {
     background-image: url('https://media.raal.se/bild/raal4.png');
-    margin-bottom: calc(var(--height) * .08);
-    top: calc(.02315 * var(--height));
+    margin-bottom: calc(var(--logo-height) * .08);
+    top: calc(.02315 * var(--logo-height));
     height: 64.815%;
 }
 .falling-tiles .tile.t-5::after {
     background-image: url('https://media.raal.se/bild/raal5.png');
-    margin-bottom: calc(var(--height) * .08148);
-    top: calc(.58611 * var(--height));
+    margin-bottom: calc(var(--logo-height) * .08148);
+    top: calc(.58611 * var(--logo-height));
     height: 33.241%;
 }
 
@@ -283,7 +285,7 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
 
 .narrow {
     margin: 0 auto;
-    padding: 0 2em 2em;
+    padding: 0 1em 2em;
     width: 100%;
 }
 
