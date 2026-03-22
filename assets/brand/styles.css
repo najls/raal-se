@@ -32,9 +32,6 @@
     --bg-color: 19, 4, 17;
     --text-color: 240, 240, 250;
     --prim-color: 230, 50, 70;
-    --logo-width: min(100vw, 800px);
-    --logo-height: calc(var(--logo-width) * .77143);
-    --menu-height: calc(var(--logo-height) * .485);
 }
 
 .icon.apple {
@@ -84,15 +81,18 @@ body {
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: clamp(.875rem, calc(.784rem + .3883vw), 1.25rem); /* min-width: 375px; max-width: 1920px */
     margin: 0;
-    min-height: 100dvh;
 }
 
 .scroll-snap {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
     height: 100dvh;
 }
-.scroll-snap .align-start { scroll-snap-align: start }
+.scroll-snap .align-start {
+    scroll-snap-align: start;
+    min-height: 1px;
+}
 
 main {
     flex: 1;
@@ -157,34 +157,29 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
     text-transform: uppercase;
 }
 
+:root {
+    --logo-width: min(100vw, 800px);
+    --logo-height: min(100dvh, calc(var(--logo-width) * .77143));
+    --menu-height: 200px;
+}
+
 #mainHeader {
     background-color: black;
     position: sticky;
-    top: calc(-100dvh + var(--menu-height) * -1);
-}
-
-.bar {
+    top: -100dvh;
     height: calc(100dvh + var(--menu-height));
-    position: sticky;
-    top: calc(-100dvh + var(--menu-height));
-    pointer-events: none;
-    z-index: 5;
-}
-
-.foo {
-    background-image: linear-gradient(to bottom, black 75%, transparent);
-    position: sticky;
-    top: calc(var(--logo-height) * -.56);
 }
 
 .falling-tiles {
+    /* pointer-events: none; */
     position: relative;
     width: var(--logo-width);
-    height: var(--logo-height);
+    height: 100%;
     margin: 0 auto;
 }
 .falling-tiles .tile {
     position: absolute;
+    top: 0;
     height: 100%;
 }
 .falling-tiles .tile.t-0 {
@@ -221,41 +216,44 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
 }
 .falling-tiles .tile.t-0::after {
     background-image: url('https://media.raal.se/bild/raal0.png');
+    margin-bottom: calc(.0375 * var(--logo-height));
     top: calc(.01944 * var(--logo-height));
-    height: 89.722%;
+    height: calc(.89722 * var(--logo-height));
 }
 .falling-tiles .tile.t-1::after {
     background-image: url('https://media.raal.se/bild/raal1.png');
-    margin-bottom: calc(var(--logo-height) * .02);
+    margin-bottom: calc(.0575 * var(--logo-height));
     top: calc(.29074 * var(--logo-height));
-    height: 38.241%;
+    height: calc(.38241 * var(--logo-height));
 }
 .falling-tiles .tile.t-2::after {
     background-image: url('https://media.raal.se/bild/raal2.png');
-    margin-bottom: calc(var(--logo-height) * .18);
+    margin-bottom: calc(.2175 * var(--logo-height));
     top: calc(.02963 * var(--logo-height));
-    height: 61.019%;
+    height: calc(.61019 * var(--logo-height));
 }
 .falling-tiles .tile.t-3::after {
     background-image: url('https://media.raal.se/bild/raal3.png');
+    margin-bottom: calc(.0375 * var(--logo-height));
     top: calc(.02963 * var(--logo-height));
-    height: 60.648%;
+    height: calc(.60648 * var(--logo-height));
 }
 .falling-tiles .tile.t-4::after {
     background-image: url('https://media.raal.se/bild/raal4.png');
-    margin-bottom: calc(var(--logo-height) * .08);
+    margin-bottom: calc(.1175 * var(--logo-height));
     top: calc(.02315 * var(--logo-height));
-    height: 64.815%;
+    height: calc(.64815 * var(--logo-height));
 }
 .falling-tiles .tile.t-5::after {
     background-image: url('https://media.raal.se/bild/raal5.png');
-    margin-bottom: calc(var(--logo-height) * .08148);
+    margin-bottom: calc(.11898 * var(--logo-height));
     top: calc(.58611 * var(--logo-height));
-    height: 33.241%;
+    height: calc(.33241 * var(--logo-height));
 }
 
 #mainNav {
-    position: relative;
+    position: absolute;
+    bottom: 0;
     width: 100%;
     height: calc(var(--menu-height));
     z-index: 6;
