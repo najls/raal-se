@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Tulpen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
 
 @font-face {
     font-family: 'Open Sans';
@@ -32,6 +35,7 @@
     --bg-color: 19, 4, 17;
     --text-color: 240, 240, 250;
     --prim-color: 230, 50, 70;
+    --prim-color: 255, 174, 0;
     --logo-height: min(100dvh, 617px);
     --logo-width: min(100vw, calc(var(--logo-height) * 1.2963));
     --menu-height: calc(var(--logo-height) * .475);
@@ -259,34 +263,32 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: calc(var(--menu-height));
+    height: var(--menu-height);
 }
 #mainNav ul {
     display: grid;
-    grid-template-columns: repeat(24, 1fr);
+    grid-template-columns: repeat(32, 1fr);
+    margin: 0 auto;
+    width: var(--logo-width);
+    height: 100%;
 }
-#mainNav li { text-align: center }
+#mainNav li {
+    text-align: center;
+    align-content: end;
+}
 #mainNav li:first-child {
-    grid-column: 10;
+    grid-column: 5;
 }
 #mainNav li:nth-child(2) {
-    grid-column: 15;
+    grid-column: 13;
 }
 #mainNav li:nth-child(3) {
-    grid-column: 21;
+    grid-column: 28;
 }
-/* #mainNav li:nth-child(3) {
-    border-left: .063em solid rgb(var(--prim-color));
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-} */
 #mainNav a {
     font-size: 1.75em;
-    font-family: 'Alumni Sans', Arial, sans-serif;
-    letter-spacing: .25em;
-    margin-right: -.25em;
+    font-family: 'Syne Mono', Arial, sans-serif;
+    letter-spacing: .063em;
     text-decoration: none;
     text-transform: uppercase;
     text-orientation: upright;
