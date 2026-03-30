@@ -11,31 +11,28 @@
 <html lang="{{ page.lang }}">
 {% include head.html %}
 <body>
-    <div class="scroll-snap">
-        <a href="#main" id="skipToMain">{{ skip_link_text }}</a>
-        <!-- <a href="{{ page.translate | relative_url }}" id="changeLang" lang="{{ lang_link_lang }}">
-            <div class="icon earth-europe" aria-hidden="true"></div>
-            <span>{{ lang_link_text }}</span>
-        </a> -->
-        <div class="align-start"></div>
-        <header id="mainHeader">
-            <h1 class="sr-only" lang="sv-SE-u-sd-seac">Raal</h1>
-            <div class="scrolling-logo">
-                <span class="tile t-0"></span>
-                <span class="tile t-1"></span>
-                <span class="tile t-2"></span>
-                <span class="tile t-3"></span>
-                <span class="tile t-4"></span>
-                <span class="tile t-5"></span>
-            </div>
-            {% include nav.html %}
-        </header>
-        <main class="narrow align-start" id="main">
-            {{ content }}
-        </main>
-        {% include footer.html %}
-        <div class="align-start"></div>
-    </div>
+    <a href="#main" id="skipToMain">{{ skip_link_text }}</a>
+    <!-- <a href="{{ page.translate | relative_url }}" id="changeLang" lang="{{ lang_link_lang }}">
+        <div class="icon earth-europe" aria-hidden="true"></div>
+        <span>{{ lang_link_text }}</span>
+    </a> -->
+    <header id="mainHeader">
+        <h1 class="sr-only" lang="sv-SE-u-sd-seac">Raal</h1>
+        <div class="scrolling-logo">
+            <span class="tile t-0"></span>
+            <span class="tile t-1"></span>
+            <span class="tile t-2"></span>
+            <span class="tile t-3"></span>
+            <span class="tile t-4"></span>
+            <span class="tile t-5"></span>
+        </div>
+        {% include nav.html %}
+    </header>
+    <main class="narrow" id="main">
+        {{ content }}
+    </main>
+    {% include footer.html %}
+    <script src="{{ '/js/scroll-snap.js?v=' | append: site.version | relative_url }}"></script>
     <script src="{{ '/js/accordion.js?v=' | append: site.version | relative_url }}"></script>
 </body>
 </html>
