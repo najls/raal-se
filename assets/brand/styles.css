@@ -17,23 +17,21 @@
     src: url('/assets/fonts/OpenSans-LightItalic.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'Lacquer';
+    font-family: 'Alumni Sans';
     font-style: normal;
     font-weight: normal;
-    src: url('/assets/fonts/Lacquer-Regular.ttf') format('truetype');
+    src: url('/assets/fonts/AlumniSans-Regular.ttf') format('truetype');
 }
 
 :root {
     --bg-header: 3, 1, 7;
     --bg-color: 19, 4, 17;
     --text-color: 240, 240, 250;
-    --nav-color: 33, 32, 46;
-    --prim-color: 189, 33, 80;
+    --prim-color: 230, 50, 70;
     --logo-height: min(100dvh, 617px);
     --logo-width: min(100vw, calc(var(--logo-height) * 1.2963));
     --menu-height: calc(var(--logo-height) * .475);
 }
-
 @media (orientation: portrait) {
     :root {
         --logo-width: min(100vw, 800px);
@@ -97,6 +95,7 @@ main {
     flex: 1;
     margin-top: calc(var(--menu-height) * -1);
     padding-top: calc(var(--menu-height) * 1.125);
+    min-height: 90dvh;
 }
 
 h2, h3 {
@@ -245,8 +244,20 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
     height: calc(.33241 * var(--logo-height));
 }
 
+#downArrow {
+    --height: 15dvh;
+    background: center / contain no-repeat url('/assets/brand/arrow-down.svg');
+    position: fixed;
+    bottom: 2dvh;
+    left: 50%;
+    transform: translate(-50%);
+    width: calc(var(--height) * .5);
+    height: var(--height);
+    z-index: 3;
+}
+
 #mainNav {
-    padding-bottom: calc(.0188 * var(--logo-height));
+    padding-bottom: calc(.0063 * var(--logo-height));
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -261,17 +272,15 @@ a:focus .icon, a:hover .icon { background-color: rgba(var(--prim-color), 1) }
     height: 100%;
 }
 #mainNav li { text-align: center }
-#mainNav li:first-child { grid-column: 5 }
-#mainNav li:nth-child(2) { grid-column: 13 }
-#mainNav li:nth-child(3) { grid-column: 28 }
+#mainNav li:first-child { grid-column: 3 / 8 }
+#mainNav li:nth-child(2) { grid-column: 11 / 16 }
+#mainNav li:nth-child(3) { grid-column: 26 / 30 }
 #mainNav a {
-    color: rgba(var(--nav-color), .75);
-    font-size: calc(var(--menu-height) * .15);
-    font-family: 'Lacquer', Arial, sans-serif;
-    letter-spacing: -.188em;
+    font-size: calc(var(--menu-height) * .125);
+    font-family: 'Alumni Sans', Arial, sans-serif;
     text-decoration: none;
-    text-transform: uppercase;
     text-orientation: upright;
+    text-transform: uppercase;
     writing-mode: vertical-rl;
 }
 #mainNav a:focus, #mainNav a:hover { color: rgba(var(--prim-color), .75) }
@@ -333,6 +342,7 @@ article.release .image {
     max-width: 480px;
 }
 
+#mainFooter { min-height: 10dvh }
 #mainFooter ul {
     display: flex;
     list-style: none;
