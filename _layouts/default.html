@@ -25,6 +25,46 @@
         {{ content }}
     </main>
     {% include footer.html %}
+    <div class="hidden" id="winamp-container"></div>
     <script src="{{ '/js/accordion.js?v=' | append: site.version | relative_url }}"></script>
+    <script type="module">
+        import Webamp from "{{ '/js/webamp.butterchurn-bundle.min.mjs?v=' | append: site.version | relative_url }}"
+        const webamp = new Webamp({
+            windowLayout: {
+                main: { position: { top: 0, left: 0 } },
+                equalizer: { position: { top: 116, left: 0 } },
+                playlist: { position: { top: 232, left: 0 } }
+            },
+            zIndex: 7
+        });
+        const unsubscribe = webamp.onClose(() => {
+            document.body.classList.remove('webamp');
+        });
+        let tracks = [
+            {% for release in site.releases %}
+                {% for file in release.files %}
+                    {% if file.type.name == "mp3" %}
+                        {
+                            url: '{{ file.path }}',
+                            defaultName: 'Raal - {{ release.title }}',
+                            metaData: {
+                                artist: 'Raal',
+                                title: '{{ release.title }}'
+                            }
+                        },
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        ];
+        webamp.appendTracks(tracks);
+        document.getElementById('openWebamp').addEventListener('click', openWebamp);
+
+        function openWebamp() {
+            let container = document.getElementById('winamp-container');
+            document.body.classList.add('webamp');
+            if (webamp.getPlayerMediaStatus() === 'CLOSED') webamp.reopen();
+            else webamp.renderWhenReady(container);
+        }
+    </script>
 </body>
 </html>

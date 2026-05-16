@@ -1,7 +1,7 @@
 url: https://www.raal.se
 languages: [en, sv]
 permalink: /:name/
-version: 20260332
+version: 20260516
 collections:
   feeds:
     output: true

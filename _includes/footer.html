@@ -2,11 +2,13 @@
     {% assign youtube_link_text = "Lyssna på Raal på YouTube Music" %}
     {% assign apple_link_text = "Lyssna på Raal på Apple Music" %}
     {% assign rss_link_lang = "Lyssna på Raal i din podcast-app" %}
+    {% assign webamp_button_lang = "Lyssna på Raal i Webamp" %}
     {% assign facebook_link_lang = "Hälsa på Raal på Facebook" %}
 {% else %}
     {% assign youtube_link_text = "Listen to Raal on YouTube Music" %}
     {% assign apple_link_text = "Listen to Raal on Apple Music" %}
     {% assign rss_link_lang = "Listen to Raal in your podcast app" %}
+    {% assign webamp_button_lang = "Listen to Raal in Webamp" %}
     {% assign facebook_link_lang = "Visit Raal on Facebook" %}
 {% endif %}
 <footer class="narrow" id="mainFooter">
@@ -27,6 +29,12 @@
             <a href="{{ site.url }}/feeds/musik.xml">
                 <div class="icon rss" aria-hidden="true"></div>
                 <span class="sr-only">{{ rss_link_lang }}</span>
+            </a>
+        </li>
+        <li>
+            <a id="openWebamp" href="javascript:void(0)" role="button">
+                <div class="icon winamp" aria-hidden="true"></div>
+                <span class="sr-only">{{ webamp_button_lang }}</span>
             </a>
         </li>
         <li>
