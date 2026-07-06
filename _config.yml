@@ -1,6 +1,5 @@
 url: https://www.raal.se
 languages: [en, sv]
-timezone: Europe/Stockholm
 permalink: /:name/
 version: 20260706
 future: false
