@@ -234,6 +234,13 @@ ul.inline li { display: inline }
 ul.inline li::after { content: '|' }
 ul.inline li:last-child::after { content: none }
 
+article header strong {
+    color: rgba(var(--text-color), .75);
+    display: block;
+    font-weight: inherit;
+    margin-top: .75em;
+}
+
 article section { margin-bottom: 2em }
 
 .image {

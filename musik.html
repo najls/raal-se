@@ -9,7 +9,23 @@ translate: /music/
         <li>
             <article class="release">
                 <header>
-                    <h2 id="{{ release.cid }}">{{ release.title }}</h2>
+                    <h2 id="{{ release.cid }}">
+                        {{ release.title }}
+                        {% if release.feat %}
+                            {% assign last = release.feat.size | minus: 1 %}
+                            <strong>
+                                med
+                                {% for artist in release.feat %}
+                                    {{ artist }}
+                                    {%- if forloop.index < last -%}
+                                        ,
+                                    {% elsif forloop.index < forloop.length %}
+                                        och
+                                    {% endif %}
+                                {% endfor %}
+                            </strong>
+                        {% endif %}
+                    </h2>
                     <time datetime="{{ release.date | release: '%Y' }}">{{ release.date | date: "%Y" }}</time>
                 </header>
                 {% if release.image %}
